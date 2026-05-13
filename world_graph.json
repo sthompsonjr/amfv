@@ -1,0 +1,7342 @@
+{
+  "gate_defs": {},
+  "meta": {
+    "extraction_session": 5,
+    "generated": "2026-05-13T17:17:49.771756+00:00",
+    "notes": "Skeleton: room nodes with flags, static LDESC, globals, open edges. Gated/door/mode edge rules added in Sessions 6-7.",
+    "open_edge_count": 358,
+    "room_count": 178,
+    "source_files": [
+      "rockvil.zil",
+      "apartment.zil",
+      "prism.zil"
+    ],
+    "stub_edge_count": 133,
+    "version": "0.5.0"
+  },
+  "rooms": {
+    "AIRPORT-ENTRANCE": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Airport Entrance",
+      "desc_variants": null,
+      "description": "Airportway ends here in a huge loop past the terminal buildings of Rockvil International Airport. The main terminal building can be entered to the north, and the road leads southwest back toward the city.",
+      "edges": [
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "N",
+          "target": "TERMINAL",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "SYMPHONY-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "AIRPORT-TERMINAL-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "AIRPORTWAY-AND-RIVER": {
+      "action": "AIRPORTWAY-AND-RIVER-F",
+      "asset_ref": null,
+      "desc": "Airportway & River",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "RIVER-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "SYMPHONY-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "COLONIAL-HOTEL",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "AQUARIUM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "WELLS-THEATRE",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "ROCKVIL-HIGH-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "BSF-BASE",
+        "FENCE",
+        "WATER",
+        "RESERVOIR",
+        "HOTEL-OBJECT",
+        "SCHOOL-OBJECT",
+        "PEOPLE",
+        "WELLS-THEATRE-OBJECT"
+      ],
+      "objects": [],
+      "scene": 34,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ALLEY": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Alley",
+      "desc_variants": null,
+      "description": "This long, narrow, dim alley is flanked by tall, featureless walls. The alley, which begins to the west, ends east of here at a back doorway, through which loud, raucous music can be heard.",
+      "edges": [
+        {
+          "aliases": [
+            "W"
+          ],
+          "direction": "OUT",
+          "target": "FACTORY-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "E",
+          "target": "BAR",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "BAR-OBJECT",
+        "MUSIC"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "AQUARIUM": {
+      "action": "AQUARIUM-F",
+      "asset_ref": null,
+      "desc": "Aquarium",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "AQUARIUM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "SKYCAR-LOT-4",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "AQUARIUM-AND-PARK",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "DOWN"
+          ],
+          "direction": "UP",
+          "gate_fn": "RAMP-MOVEMENT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "EXHIBITS",
+        "PARK-OBJECT",
+        "CARLOT",
+        "WATER",
+        "AQUARIUM-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "AQUARIUM-AND-KENNEDY": {
+      "action": "AQUARIUM-AND-KENNEDY-F",
+      "asset_ref": null,
+      "desc": "Aquarium & Kennedy",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "RIVER-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "gate_fn": "OFFICE-BUILDING-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "AQUARIUM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "DENTAL-SCHOOL",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "PARK-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "AQUARIUM-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "AQUARIUM-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "BANK-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "BANK-OBJECT",
+        "SCHOOL-OBJECT",
+        "AQUARIUM-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "AQUARIUM-AND-PARK": {
+      "action": "AQUARIUM-AND-PARK-F",
+      "asset_ref": null,
+      "desc": "Aquarium & Park",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "RIVER-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "gate_fn": "BURGER-MEISTER-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "AQUARIUM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "AQUARIUM-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SW",
+          "target": "SKYCAR-LOT-4",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "ZOO-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "SERVICE-STATION",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "TUNNEL",
+        "RESTAURANT-OBJECT",
+        "BAR-OBJECT",
+        "CARLOT",
+        "AQUARIUM-OBJECT",
+        "SERVICE-STATION-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "AQUARIUM-AND-RIVER": {
+      "action": "AQUARIUM-AND-RIVER-F",
+      "asset_ref": null,
+      "desc": "Aquarium & River",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "AIRPORTWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "PICKFORD-THEATRE",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "BODANSKI-SQUARE",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "FIRST-METHODIST-CHURCH",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "AQUARIUM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "WELLS-THEATRE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "VACANT-LOT",
+        "CHURCH-OBJECT",
+        "PICKFORD-THEATRE-OBJECT",
+        "PEOPLE",
+        "WELLS-THEATRE-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "AQUARIUM-UNDERPASS": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Aquarium Underpass",
+      "desc_variants": null,
+      "description": "You are on Aquarium Drive where it passes under the old elevated highway that runs through the city. To the east is the north side of town, and to the west are the suburbs.",
+      "edges": [
+        {
+          "direction": "E",
+          "target": "ZOO-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "SUBURBS-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "ONBIT"
+      ],
+      "globals": [
+        "HIGHWAY",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ATHLETIC-FIELD": {
+      "action": "ATHLETIC-FIELD-F",
+      "asset_ref": null,
+      "desc": "Athletic Field",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "RIVER-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "RIVER-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "CHILDREN",
+        "FIELD",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "BANK": {
+      "action": "BANK-F",
+      "asset_ref": null,
+      "desc": "Bank",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SE",
+          "target": "AQUARIUM-AND-KENNEDY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "BANK-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "BAR": {
+      "action": "BAR-F",
+      "asset_ref": null,
+      "desc": "Bar",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "W",
+          "gate_fn": "BAR-TO-ALLEY-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NE",
+          "gate_fn": "BAR-TO-PIER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "BADAREABIT"
+      ],
+      "globals": [
+        "BAR-OBJECT",
+        "COUNTER",
+        "PIER-OBJECT",
+        "MUSIC",
+        "SMOKE",
+        "BAR",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "BASE-GATE": {
+      "action": "BASE-GATE-F",
+      "asset_ref": null,
+      "desc": "Base Gate",
+      "desc_variants": null,
+      "description": "This is the entrance gate to the Manville Border Security Force Base. The base road continues northwest into the base and southeast away from it.",
+      "edges": [
+        {
+          "direction": "SE",
+          "target": "SYMPHONY-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "BASE-GATE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "STREETBIT"
+      ],
+      "globals": [
+        "BSF-BASE",
+        "FENCE",
+        "GATE",
+        "GUN"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "BATHROOM": {
+      "action": "BATHROOM-F",
+      "asset_ref": null,
+      "desc": "Bathroom",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "W"
+          ],
+          "direction": "OUT",
+          "target": "BEDROOM",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "APARTMENT-OBJECT",
+        "WATER",
+        "BEDROOM-OBJECT",
+        "SINK",
+        "BATHROOM-OBJECT",
+        "PARKVIEW-APARTMENTS-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "apartment"
+    },
+    "BEDROOM": {
+      "action": "BEDROOM-F",
+      "asset_ref": null,
+      "desc": "Bedroom",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "S",
+          "target": "LIVING-ROOM",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "E",
+          "target": "BATHROOM",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "APARTMENT-OBJECT",
+        "APARTMENT-WINDOW",
+        "BEDROOM-OBJECT",
+        "BATHROOM-OBJECT",
+        "LIVING-ROOM-OBJECT",
+        "PARKVIEW-APARTMENTS-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "apartment"
+    },
+    "BEND": {
+      "action": "BEND-F",
+      "asset_ref": null,
+      "desc": "Bend",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "SOUTHWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "CONSTRUCTION-SITE-2",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "NO-ENTRY-TO-HEIMAN-WORLD-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SE",
+          "target": "WICKER-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "gate_fn": "HARDWARE-STORE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "DRUG-STORE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "LAUNDROMAT",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "PEOPLE",
+        "RAILROAD-BRIDGE",
+        "CONSTRUCTION-OBJECT",
+        "DRUG-STORE-OBJECT",
+        "FENCE",
+        "HARDWARE-STORE-OBJECT",
+        "HEIMAN-WORLD-OBJECT",
+        "RAILROAD-TRACKS"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "BODANSKI-SQUARE": {
+      "action": "BODANSKI-SQUARE-F",
+      "asset_ref": null,
+      "desc": "Bodanski Square",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "AQUARIUM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "gate_fn": "SIMONS-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "MUSEUM-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "TRAIN-STATION-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "MIDLAND-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "CENTRE-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "SKYCAR-LOT-5",
+          "type": "open"
+        },
+        {
+          "direction": "DOWN",
+          "gate_fn": "TUBES-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "TRAIN-STATION-OBJECT",
+        "STAIRS",
+        "SLOT",
+        "RESTAURANT-OBJECT",
+        "CARLOT",
+        "PEOPLE",
+        "CHURCH-OBJECT",
+        "TUBE-STATION"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "BOOKSTORE": {
+      "action": "BOOKSTORE-F",
+      "asset_ref": null,
+      "desc": "Bookstore",
+      "desc_variants": null,
+      "description": "A less likely place for a bookstore you couldn't imagine. This one seems to be stocked mostly with used books. Closely-placed shelves, filled with old books, rise to ceiling, and a pleasant, papery odor fills the shop. The front door leads west.| The proprietor smiles at you kindly.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "W",
+          "target": "WICKER-AND-PIER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "SHELVES",
+        "BOOKSTORE-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "BROWN-TUBECAR": {
+      "action": "TUBECAR-F",
+      "asset_ref": null,
+      "desc": "Tubecar",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "OUT",
+          "gate_fn": "BROWN-TUBECAR-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "TUBE-SIGN",
+        "GRAFFITI",
+        "TUBE-STATION",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "BURGER-MEISTER": {
+      "action": "BURGER-MEISTER-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SW",
+          "gate_fn": "BURGER-MEISTER-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "RESTAURANT-OBJECT",
+        "BAR-OBJECT",
+        "COUNTER",
+        "SMOKE",
+        "GLOBAL-TABLE",
+        "MENU",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "BURNED-OUT-AREA": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Burned-out Area",
+      "desc_variants": null,
+      "description": "You are in a tangle of narrow streets. All the buildings around you are deserted, their windows broken, their fixtures looted. Many are no more than burned-out shells. One street, slightly wider than the rest, leads southeast.",
+      "edges": [
+        {
+          "aliases": [
+            "NE",
+            "E",
+            "S",
+            "SW",
+            "W",
+            "NW"
+          ],
+          "direction": "N",
+          "target": "BURNED-OUT-AREA",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "DUMP-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "GLOBAL-WINDOW"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": "disorientation",
+      "zone": "street"
+    },
+    "CAFETERIA": {
+      "action": "CAFETERIA-F",
+      "asset_ref": null,
+      "desc": "PRISM Facility Cafeteria",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "GLOBAL-WINDOW",
+        "GLOBAL-TABLE",
+        "OUTLETS",
+        "FLOODLIGHT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": null,
+      "zone": "prism"
+    },
+    "CEMETERY": {
+      "action": "CEMETERY-F",
+      "asset_ref": null,
+      "desc": "Cemetery",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "E",
+            "SE"
+          ],
+          "direction": "NE",
+          "gate_fn": "RIVER-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "MAIN-AND-WICKER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "MAIN-AND-CHURCH",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "CHURCH-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "MIDLAND-AND-CHURCH",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "GRAFFITI",
+        "WATER",
+        "RIVER",
+        "CEMETERY-OBJECT",
+        "CONSTRUCTION-OBJECT",
+        "GATE",
+        "RIVER-BANK"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CENTRE-AND-KENNEDY": {
+      "action": "CENTRE-AND-KENNEDY-F",
+      "asset_ref": null,
+      "desc": "Centre & Kennedy",
+      "desc_variants": null,
+      "description": "At this intersection, Centre Street cuts across Kennedy Street from northeast to southwest. A tall hotel has entrances to the east and southeast. The austere facade of Huang Hall rises to the west. Kennedy Street continues north and south.",
+      "edges": [
+        {
+          "direction": "N",
+          "target": "PARK-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "BODANSKI-SQUARE",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "SE"
+          ],
+          "direction": "E",
+          "target": "VELDRAN-HOTEL",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "MAIN-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "ROCKVIL-CENTRE",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "HUANG-HALL",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "HOTEL-OBJECT",
+        "HUANG-HALL-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": 25,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "CHURCH-ENTRANCE": {
+      "action": "CHURCH-ENTRANCE-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "MIDLAND-AND-CHURCH",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "CEMETERY",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "MAIN-AND-CHURCH",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "CONSTRUCTION-SITE-4-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "W",
+          "gate_fn": "ST-MICHAELS-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "CONSTRUCTION-SITE-5-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "GRAFFITI",
+        "CEMETERY-OBJECT",
+        "VACANT-LOT",
+        "CONSTRUCTION-OBJECT",
+        "PEOPLE",
+        "CHURCH-OBJECT",
+        "RECTORY-OBJECT",
+        "GATE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "CHURCH-STREET-APARTMENTS": {
+      "action": "CHURCH-STREET-APARTMENTS-F",
+      "asset_ref": null,
+      "desc": "Church Street Apartments",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "SE"
+          ],
+          "direction": "IN",
+          "gate_fn": "INNER-LOBBY-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "NW"
+          ],
+          "direction": "OUT",
+          "target": "MAIN-AND-CHURCH",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "UNOPENABLE-DOOR",
+        "MAILBOXES",
+        "PICTUREPHONE",
+        "GRAFFITI",
+        "GLASS"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CHURCH-STREET-PARK": {
+      "action": "CHURCH-STREET-PARK-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "MAIN-AND-CHURCH",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "E",
+            "SE",
+            "S",
+            "SW",
+            "NW"
+          ],
+          "direction": "NE",
+          "gate_fn": "CHURCH-STREET-PARK-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "HEIMAN-VILLAGE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "GRAFFITI",
+        "TUNNEL",
+        "PARK-OBJECT",
+        "CHURCH-STREET-CITY-OBJECT",
+        "FENCE",
+        "HEIMAN-VILLAGE-OBJECT",
+        "RAILROAD-TRACKS",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CINEMA": {
+      "action": "CINEMA-F",
+      "asset_ref": null,
+      "desc": "Cinema",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "SKYCAR-LOT-7",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "SKYCAR-LOT-6",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "MUSEUM-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "IN",
+          "gate_fn": "THEATRE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "SLOT",
+        "MOVIE-THEATRE-OBJECT",
+        "CARLOT",
+        "HALLWAY",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CITY-DUMP": {
+      "action": "CITY-DUMP-F",
+      "asset_ref": null,
+      "desc": "City Dump",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NE",
+          "target": "DUMP-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "FENCE",
+        "RIVER",
+        "RIVER-BANK",
+        "WATER",
+        "DUMP-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CITY-HALL": {
+      "action": "CITY-HALL-F",
+      "asset_ref": null,
+      "desc": "City Hall",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "E",
+          "target": "ROCKVIL-CENTRE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "CITY-HALL-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CLOSED-FACTORY": {
+      "action": "CLOSED-FACTORY-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "S",
+          "target": "WICKER-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "FACTORY-OBJECT",
+        "GLOBAL-TABLE",
+        "SOUP-KITCHEN"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "COLONIAL-HOTEL": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Colonial Hotel",
+      "desc_variants": null,
+      "description": "This old hotel features many of the architectural luxuries rarely seen nowadays, most notably the huge, multistory atrium. There are exits leading northwest and east.",
+      "edges": [
+        {
+          "direction": "NW",
+          "target": "AIRPORTWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "SKYCAR-LOT-7",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "CARLOT",
+        "HOTEL-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "COMM-ROOM": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "(undefined)",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [],
+      "globals": [
+        "OUTLETS"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": "virtual_mode",
+      "zone": "prism"
+    },
+    "CONSTRUCTION-SITE-1": {
+      "action": "CONSTRUCTION-SITE-1-F",
+      "asset_ref": null,
+      "desc": "Construction Site",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SE",
+          "target": "SOUTHWAY-AND-KENNEDY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "GLOBAL-SIGN",
+        "FENCE",
+        "CONSTRUCTION-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CONSTRUCTION-SITE-2": {
+      "action": "CONSTRUCTION-SITE-2-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "W",
+          "target": "SOUTHWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "BEND",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "GLOBAL-SIGN",
+        "CONSTRUCTION-OBJECT",
+        "HEIMAN-WORLD-OBJECT",
+        "FENCE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CONSTRUCTION-SITE-3": {
+      "action": null,
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": "The Johnson Federal Building, which closed last year when the offices of the few remaining Federal agencies were transferred to City Hall, is being renovated as an office building with commercial space on the ground floor. You can leave the site to the northeast.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NE",
+          "target": "MAIN-AND-CHURCH",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "CONSTRUCTION-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CONSTRUCTION-SITE-4": {
+      "action": null,
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": "A conventional city apartment block is nearing completion here. There are openings in the southeast and northeast corners of the perimeter fence.",
+      "edges": [
+        {
+          "direction": "SE",
+          "target": "MAIN-AND-CHURCH",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "CHURCH-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "CONSTRUCTION-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CONSTRUCTION-SITE-5": {
+      "action": "CONSTRUCTION-SITE-5-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "MIDLAND-AND-CHURCH",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "CHURCH-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "GLASS",
+        "RECTORY-OBJECT",
+        "CONSTRUCTION-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "CONTROL-CENTER": {
+      "action": "CONTROL-CENTER-F",
+      "asset_ref": null,
+      "desc": "PRISM Project Control Center",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "CONVERSATION",
+        "GUN",
+        "OUTLETS",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": null,
+      "zone": "prism"
+    },
+    "CORE": {
+      "action": "CORE-F",
+      "asset_ref": null,
+      "desc": "Maintenance Core",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "GUN",
+        "OUTLETS",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": null,
+      "zone": "prism"
+    },
+    "COURTHOUSE": {
+      "action": "COURTHOUSE-F",
+      "asset_ref": null,
+      "desc": "Courthouse",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SE",
+          "target": "ELM-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "COURTHOUSE-OBJECT",
+        "WOMAN",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "DEN": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Den",
+      "desc_variants": null,
+      "description": "A second fireplace fills the far wall of this homey space. Aside from a wall-mounted entertainment center, all the furnishings are gone. An arched doorway leads east.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "E",
+          "target": "FOYER",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "HALLWAY",
+        "DEN-OBJECT",
+        "FIREPLACE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "DENTAL-SCHOOL": {
+      "action": "DENTAL-SCHOOL-F",
+      "asset_ref": null,
+      "desc": "Dental School",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NW",
+          "target": "AQUARIUM-AND-KENNEDY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "SCHOOL-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "DINING-ROOM": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Dining Room",
+      "desc_variants": null,
+      "description": "The spacious dining area is flanked by the living room, on the other side of the bamboo curtain to the west, and the kitchen, to the east.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "W",
+          "target": "EPILOGUE-LIVING-ROOM",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "E",
+          "target": "EPILOGUE-KITCHEN",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "LIVING-ROOM-OBJECT",
+        "KITCHEN",
+        "DINING-ROOM-OBJECT",
+        "BAMBOO-SCREEN",
+        "GLOBAL-TABLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "DORM": {
+      "action": "DORM-F",
+      "asset_ref": null,
+      "desc": "Dorm",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "E",
+          "target": "ROCKVIL-UNIVERSITY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "DORM-OBJECT",
+        "CAMPUS",
+        "CONVERSATION",
+        "MUSIC"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "DRUG-STORE": {
+      "action": "DRUG-STORE-F",
+      "asset_ref": null,
+      "desc": "Drug Store",
+      "desc_variants": null,
+      "description": "This is one of those \\",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NE",
+          "target": "BEND",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "DRUG-STORE-OBJECT",
+        "COUNTER",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "DUMP-ENTRANCE": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Dump Entrance",
+      "desc_variants": null,
+      "description": "Wicker Drive turns ninety degrees here, leading northeast and northwest. To the southwest is an entrance to the city's primary waste disposal facility, which extends along the southern side of the street. A deserted tenement blocks movement north.",
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "INDUSTRIAL-PARK-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "SW",
+          "target": "CITY-DUMP",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "BURNED-OUT-AREA",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "DUMP-OBJECT",
+        "TENEMENT-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "DUNBARS": {
+      "action": "DUNBARS-F",
+      "asset_ref": null,
+      "desc": "Dunbar's",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NW",
+          "target": "ROCKVIL-CENTRE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "DUNBARS-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "ELM-AND-KENNEDY": {
+      "action": "ELM-AND-KENNEDY-F",
+      "asset_ref": null,
+      "desc": "Elm & Kennedy",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "MAIN-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "gate_fn": "STOCK-EXCHANGE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "ELM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "ROCKVIL-MALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "SOUTHWAY-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "HOSPITAL",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "ELM-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "KENNEDY-PARK-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "STOCK-EXCHANGE-OBJECT",
+        "MALL-OBJECT",
+        "PARK-OBJECT",
+        "HOSPITAL-OBJECT",
+        "CONSTRUCTION-OBJECT",
+        "GATE",
+        "TOWNHOUSE",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ELM-AND-PARK": {
+      "action": "ELM-AND-PARK-F",
+      "asset_ref": null,
+      "desc": "Elm & Park",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "ROCKVIL-CENTRE",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "gate_fn": "KENNEDY-PARK-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "ELM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "POST-OFFICE",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "SOUTHWAY-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "POLICE-STATION",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "ELM-AND-UNIVERSITY",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "COURTHOUSE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "COURTHOUSE-OBJECT",
+        "PARK-OBJECT",
+        "POST-OFFICE-OBJECT",
+        "TOWNHOUSE",
+        "CONSTRUCTION-OBJECT",
+        "GATE",
+        "POLICE-STATION-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ELM-AND-RIVER": {
+      "action": "ELM-AND-RIVER-F",
+      "asset_ref": null,
+      "desc": "Elm & River",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "MAIN-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "E",
+            "SE"
+          ],
+          "direction": "NE",
+          "target": "HEIMAN-VILLAGE",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "SOUTHWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "ROCKVIL-MALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "ELM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "STOCK-EXCHANGE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "DOWN",
+          "gate_fn": "TUBES-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "STAIRS",
+        "STOCK-EXCHANGE-OBJECT",
+        "MALL-OBJECT",
+        "HEIMAN-VILLAGE-OBJECT",
+        "TUBE-STATION",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ELM-AND-UNIVERSITY": {
+      "action": "ELM-AND-UNIVERSITY-F",
+      "asset_ref": null,
+      "desc": "Elm & University",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "E",
+          "target": "ELM-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "UNIVERSITY-HEIGHTS",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "ELM-UNDERPASS",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "ROCKVIL-UNIVERSITY",
+          "type": "open"
+        },
+        {
+          "direction": "DOWN",
+          "gate_fn": "TUBES-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "CAMPUS",
+        "STAIRS",
+        "UNIVERSITY-HEIGHTS-OBJECT",
+        "TUBE-STATION",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ELM-UNDERPASS": {
+      "action": "ELM-UNDERPASS-F",
+      "asset_ref": null,
+      "desc": "Elm Underpass",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "EZZIS-BAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "ELM-AND-UNIVERSITY",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "gate_fn": "ROYS-PAGODA-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "SUBURBS-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "ONBIT"
+      ],
+      "globals": [
+        "PEOPLE",
+        "GRAFFITI",
+        "GLOBAL-WINDOW",
+        "HIGHWAY",
+        "RESTAURANT-OBJECT",
+        "BAR-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "EPILOGUE-BATHROOM": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Bath",
+      "desc_variants": null,
+      "description": "An antique, tile decor masks the ultramodern features of this large bathroom. A whirlpool tub fills the far end of the room. The exit, up a few steps, is northeast.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT",
+            "UP"
+          ],
+          "direction": "NE",
+          "target": "FOYER",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "SINK",
+        "HALLWAY",
+        "BATHROOM-OBJECT",
+        "STAIRS"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "EPILOGUE-KITCHEN": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Kitchen",
+      "desc_variants": null,
+      "description": "Rimmed with butcher-block counters, softly lit by recessed zyolights, and decorated in a random pattern of pastel tile, the kitchen is both lovely and functional. You can exit to the west.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "W",
+          "target": "DINING-ROOM",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "SINK",
+        "KITCHEN",
+        "DINING-ROOM-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "EPILOGUE-LIVING-ROOM": {
+      "action": "EPILOGUE-LIVING-ROOM-F",
+      "asset_ref": null,
+      "desc": "Living Room",
+      "desc_variants": null,
+      "description": "Sunken, comfy pillowseats form a vaguely oval perimeter around a central circular fireplace. The rest of the furniture has been removed. The dining room lies beyond a bamboo screen to the east. An open, curving stair leads up to the master bedroom, and a foyer leads north.",
+      "edges": [
+        {
+          "direction": "UP",
+          "target": "MASTER-BEDROOM",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "DINING-ROOM",
+          "type": "open"
+        },
+        {
+          "direction": "N",
+          "target": "FOYER",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "SOLARIUM",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "LIVING-ROOM-OBJECT",
+        "HALLWAY",
+        "BEDROOM-OBJECT",
+        "SOLARIUM-OBJECT",
+        "DINING-ROOM-OBJECT",
+        "STAIRS",
+        "FIREPLACE",
+        "BAMBOO-SCREEN"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "EZZIS-BAR": {
+      "action": "EZZIS-BAR-F",
+      "asset_ref": null,
+      "desc": "Ezzi's Bar",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "S",
+          "gate_fn": "EZZIS-BAR-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "BAR-OBJECT",
+        "COUNTER",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "FACTORY-ENTRANCE": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Factory Entrance",
+      "desc_variants": null,
+      "description": "You are on Wicker Drive, which runs northeast to southwest. An alley forks off to the east. A large factory complex can be entered to the southeast, and a gun shop is north of here. A row of tenements stretches off to the northwest and west.",
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "GUN-SHOP-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NE",
+          "target": "WICKER-AND-PIER",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "ALLEY",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "SE",
+          "target": "SKYCAR-FACTORY",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "WICKER-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "NW"
+          ],
+          "direction": "W",
+          "target": "TENEMENT-2",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "FACTORY-OBJECT",
+        "TENEMENT-OBJECT",
+        "GUN-SHOP-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "FIREHOUSE": {
+      "action": "FIREHOUSE-F",
+      "asset_ref": null,
+      "desc": "Firehouse",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SE",
+          "target": "SOUTHWAY-UNDERPASS",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "FIREHOUSE-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "FIRST-METHODIST-CHURCH": {
+      "action": "FIRST-METHODIST-CHURCH-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NE",
+          "target": "AQUARIUM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "SKYCAR-LOT-5",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "VACANT-LOT",
+        "CARLOT",
+        "CHURCH-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "FOODVILLE-1": {
+      "action": "FOODVILLE-1-F",
+      "asset_ref": null,
+      "desc": "Foodville",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "SOUTHWAY-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "SKYCAR-LOT-1",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "SUPERMARKET",
+        "CARLOT",
+        "SHELVES"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "FOODVILLE-2": {
+      "action": "FOODVILLE-2-F",
+      "asset_ref": null,
+      "desc": "Foodville",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NE",
+          "target": "MAIN-AND-WICKER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "SUPERMARKET",
+        "GLASS",
+        "SHELVES"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "FOYER": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Foyer",
+      "desc_variants": null,
+      "description": "This bright, airy hallway runs northwards from the living room to the apartment door. Tall, arched entrances lead east and west, and the bath is down a few steps to the southwest.",
+      "edges": [
+        {
+          "direction": "S",
+          "target": "EPILOGUE-LIVING-ROOM",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "DOWN"
+          ],
+          "direction": "SW",
+          "target": "EPILOGUE-BATHROOM",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "GUEST-ROOM",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "DEN",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "LIVING-ROOM-OBJECT",
+        "HALLWAY",
+        "BEDROOM-OBJECT",
+        "BATHROOM-OBJECT",
+        "DEN-OBJECT",
+        "STAIRS"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "GUEST-ROOM": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Guest Room",
+      "desc_variants": null,
+      "description": "This is a sunny, cozy bedroom, barren of furniture. The only way out is to the west.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "W",
+          "target": "FOYER",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "HALLWAY",
+        "BEDROOM-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "GUN-SHOP": {
+      "action": "GUN-SHOP-F",
+      "asset_ref": null,
+      "desc": "Gun Shop",
+      "desc_variants": null,
+      "description": "You are in a small armaments store, with metal bars over the counter separating you from the proprietor. There is an exit to the south.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "S",
+          "target": "FACTORY-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "COUNTER",
+        "GUN",
+        "GUN-SHOP-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "HALLEY-AND-PARK": {
+      "action": "HALLEY-AND-PARK-F",
+      "asset_ref": null,
+      "desc": "Halley & Park",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "HUANG-HALL",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "ROCKVIL-CENTRE",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "HALLEY-MUSEUM-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "HALLEY-AND-UNIVERSITY",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "TUNNEL",
+        "MUSEUM-OBJECT",
+        "PARK-OBJECT",
+        "GATE",
+        "HUANG-HALL-OBJECT",
+        "HALLEY-ESTATES-OBJECT",
+        "UNOPENABLE-DOOR",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "HALLEY-AND-UNIVERSITY": {
+      "action": "HALLEY-AND-UNIVERSITY-F",
+      "asset_ref": null,
+      "desc": "Halley & University",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "NW"
+          ],
+          "direction": "NE",
+          "gate_fn": "NO-ENTRANCE-TO-PARK-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "HALLEY-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "ROCKVIL-UNIVERSITY",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "INTERCHANGE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "HIGHWAY",
+        "CAMPUS",
+        "PARK-OBJECT",
+        "GATE",
+        "HALLEY-ESTATES-OBJECT",
+        "PEOPLE",
+        "INTERCHANGE-OBJECT"
+      ],
+      "objects": [],
+      "scene": 100,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "HALLEY-MUSEUM": {
+      "action": "HALLEY-MUSEUM-F",
+      "asset_ref": null,
+      "desc": "Halley Museum",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NE",
+          "target": "HALLEY-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "MUSEUM-OBJECT",
+        "EXHIBITS",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "HALLEY-PARK-EAST": {
+      "action": "HALLEY-PARK-EAST-F",
+      "asset_ref": null,
+      "desc": "Halley Park East",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "AQUARIUM-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "PARK-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "HUANG-HALL",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "HALLEY-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NW",
+          "target": "SKYCAR-LOT-4",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "PARKBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "GRAFFITI",
+        "PARK-OBJECT",
+        "CARLOT",
+        "AQUARIUM-OBJECT",
+        "HUANG-HALL-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "HALLEY-PARK-WEST": {
+      "action": "HALLEY-PARK-WEST-F",
+      "asset_ref": null,
+      "desc": "Halley Park West",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "SKYCAR-LOT-4",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SE",
+          "target": "HALLEY-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "HALLEY-AND-UNIVERSITY",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "NW"
+          ],
+          "direction": "W",
+          "target": "ZOO",
+          "type": "open"
+        },
+        {
+          "direction": "DOWN",
+          "gate_fn": "TUBES-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "PARKBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "PEOPLE",
+        "STAIRS",
+        "ZOO-OBJECT",
+        "PARK-OBJECT",
+        "WATER",
+        "CARLOT",
+        "TUBE-STATION"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "HARDWARE-STORE": {
+      "action": "HARDWARE-STORE-F",
+      "asset_ref": null,
+      "desc": "Hardware Store",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "N",
+          "target": "BEND",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "HARDWARE-STORE-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "HEALTH-CENTER": {
+      "action": "HEALTH-CENTER-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "SKYCAR-LOT-3",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "MAIN-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "CARLOT",
+        "HEALTH-CENTER-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "HEIMAN-VILLAGE": {
+      "action": "HEIMAN-VILLAGE-F",
+      "asset_ref": null,
+      "desc": "Heiman Village",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "E",
+          "target": "CHURCH-STREET-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "ELM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "MAIN-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "PARK-OBJECT",
+        "SCHOOL-OBJECT",
+        "CHURCH-STREET-CITY-OBJECT",
+        "HEIMAN-VILLAGE-OBJECT",
+        "STORE-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "HOSPITAL": {
+      "action": "HOSPITAL-F",
+      "asset_ref": null,
+      "desc": "Hospital",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "ELM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "HOSPITAL-ANNEX",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "HOSPITAL-OBJECT",
+        "ANNEX-OBJECT",
+        "HALLWAY",
+        "DESK"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "HOSPITAL-ANNEX": {
+      "action": "HOSPITAL-ANNEX-F",
+      "asset_ref": null,
+      "desc": "Hospital Annex",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "HOSPITAL",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "SOUTHWAY-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "HOSPITAL-OBJECT",
+        "ANNEX-OBJECT",
+        "HALLWAY"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "HUANG-HALL": {
+      "action": "HUANG-HALL-F",
+      "asset_ref": null,
+      "desc": "Huang Hall",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "CENTRE-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "HALLEY-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "PARK-OBJECT",
+        "HUANG-HALL-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "INDUSTRIAL-PARK-DRIVE": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Industrial Park Drive",
+      "desc_variants": null,
+      "description": "You are on a narrow road circling through a grouping of warehouses and light factories. There are buildings on every side except southeast, where the road leads out of the park.",
+      "edges": [
+        {
+          "direction": "SE",
+          "target": "INDUSTRIAL-PARK-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "UNOPENABLE-DOOR",
+        "INDUSTRIAL-PARK-OBJECT",
+        "FACTORY-OBJECT",
+        "WAREHOUSE-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "INDUSTRIAL-PARK-ENTRANCE": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Industrial Park Entrance",
+      "desc_variants": null,
+      "description": "You are on Wicker Drive, which leads northeast and southwest. A road leads northwest into Rockvil Industrial Park. An old, gray warehouse stands on the northern corner, and an ugly tenement is just east of here.",
+      "edges": [
+        {
+          "direction": "N",
+          "target": "WAREHOUSE-2",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "WICKER-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "TENEMENT-1",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "DUMP-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "NW",
+          "target": "INDUSTRIAL-PARK-DRIVE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "INDUSTRIAL-PARK-OBJECT",
+        "WAREHOUSE-OBJECT",
+        "TENEMENT-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "INTERCHANGE": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Interchange",
+      "desc_variants": null,
+      "description": "This is a huge cloverleaf interchange which once carried traffic on and off the interstate. The highway lies north, south and west of here, and Halley Drive runs off to the east.",
+      "edges": [
+        {
+          "direction": "E",
+          "target": "HALLEY-AND-UNIVERSITY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "HIGHWAY",
+        "INTERCHANGE-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "INTERFACE-ROOM": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "(undefined)",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [],
+      "globals": [],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": "virtual_mode",
+      "zone": "prism"
+    },
+    "JAIL-CELL": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Jail Cell",
+      "desc_variants": null,
+      "description": "You are in a featureless, grimy jail cell. A heavy metal door forms the eastern wall of the cell.",
+      "edges": [],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "JAIL-OBJECT",
+        "UNOPENABLE-DOOR"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "JOYBOOTH": {
+      "action": "JOYBOOTH-F",
+      "asset_ref": null,
+      "desc": "Joybooth",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "W"
+          ],
+          "direction": "OUT",
+          "gate_fn": "JOYBOOTH-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "JOYBOOTH-OBJECT",
+        "SLOT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "KENNEDY-PARK": {
+      "action": "KENNEDY-PARK-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "MAIN-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "ELM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "ELM-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "PARKBIT"
+      ],
+      "globals": [
+        "PEOPLE",
+        "GATE",
+        "GLOBAL-SIGN",
+        "WATER",
+        "PARK-OBJECT",
+        "CONSTRUCTION-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "KITCHEN": {
+      "action": "KITCHEN-F",
+      "asset_ref": null,
+      "desc": "Kitchen",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "W",
+          "target": "LIVING-ROOM",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "SINK",
+        "WATER",
+        "APARTMENT-OBJECT",
+        "KITCHEN-OBJECT",
+        "LIVING-ROOM-OBJECT",
+        "COUNTER",
+        "PARKVIEW-APARTMENTS-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "apartment"
+    },
+    "LAUNDROMAT": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Laundromat",
+      "desc_variants": null,
+      "description": "This laundromat is equipped with a vibramat as well as the traditional washers and dryers. The exit is east.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "E",
+          "target": "BEND",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "LECTURE-HALL": {
+      "action": "LECTURE-HALL-F",
+      "asset_ref": null,
+      "desc": "Lecture Hall",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NW",
+          "target": "ROCKVIL-UNIVERSITY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "CAMPUS",
+        "LECTURE-HALL-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "LIBRARY-ROOM": {
+      "action": "LIBRARY-ROOM-F",
+      "asset_ref": null,
+      "desc": "(undefined)",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [],
+      "globals": [],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": "virtual_mode",
+      "zone": "prism"
+    },
+    "LIQUOR-STORE": {
+      "action": "LIQUOR-STORE-F",
+      "asset_ref": null,
+      "desc": "Liquor Store",
+      "desc_variants": null,
+      "description": "This is a small establishment stocked with cheap scotch and other liquor. There is an exit to the north.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "N",
+          "target": "WICKER-AND-PIER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "LIQUOR-STORE-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "LIVING-ROOM": {
+      "action": "LIVING-ROOM-F",
+      "asset_ref": null,
+      "desc": "Living Room",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "BEDROOM",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "KITCHEN",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "S",
+          "gate_fn": "APARTMENT-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "HIGHWAY",
+        "APARTMENT-OBJECT",
+        "APARTMENT-WINDOW",
+        "APARTMENT-DOOR",
+        "HALLWAY",
+        "CHILDREN",
+        "KITCHEN-OBJECT",
+        "LIVING-ROOM-OBJECT",
+        "BEDROOM-OBJECT",
+        "WOMAN",
+        "PARKVIEW-APARTMENTS-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "apartment"
+    },
+    "MAIN-AND-CHURCH": {
+      "action": "MAIN-AND-CHURCH-F",
+      "asset_ref": null,
+      "desc": "Main & Church",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "CHURCH-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "CEMETERY",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "MAIN-AND-WICKER",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "CHURCH-STREET-APARTMENTS",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "CHURCH-STREET-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "CONSTRUCTION-SITE-3-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "MAIN-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "CONSTRUCTION-SITE-4-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "CEMETERY-OBJECT",
+        "PARK-OBJECT",
+        "CONSTRUCTION-OBJECT",
+        "GATE",
+        "PEOPLE",
+        "CHURCH-STREET-CITY-OBJECT"
+      ],
+      "objects": [],
+      "scene": 50,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "MAIN-AND-KENNEDY": {
+      "action": "MAIN-AND-KENNEDY-F",
+      "asset_ref": null,
+      "desc": "Main & Kennedy",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "CENTRE-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "SE"
+          ],
+          "direction": "NE",
+          "gate_fn": "OFFICE-BUILDING-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "MAIN-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "ELM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "KENNEDY-PARK-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "ROCKVIL-CENTRE",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "SKYBUS-TERMINAL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "SKYBUS-TERMINAL-OBJECT",
+        "PARK-OBJECT",
+        "GLASS",
+        "TOWNHOUSE",
+        "PEOPLE",
+        "CONSTRUCTION-OBJECT",
+        "GATE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "MAIN-AND-RIVER": {
+      "action": "MAIN-AND-RIVER-F",
+      "asset_ref": null,
+      "desc": "Main & River",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "MIDLAND-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "HEALTH-CENTER",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "MAIN-AND-CHURCH",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "HEIMAN-VILLAGE",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "ELM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "OFFICE-BUILDING-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "MAIN-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "APARTMENT-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "GLOBAL-SIGN",
+        "GLASS",
+        "HEALTH-CENTER-OBJECT",
+        "HEIMAN-VILLAGE-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": 0,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "MAIN-AND-WICKER": {
+      "action": "MAIN-AND-WICKER-F",
+      "asset_ref": null,
+      "desc": "Main & Wicker",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "CEMETERY",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "MAIN-STREET-BRIDGE",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "THE-COACHMAN-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "WICKER-AND-PIER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "FOODVILLE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "MAIN-AND-CHURCH-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "CEMETERY-OBJECT",
+        "GLOBAL-SIGN",
+        "GLOBAL-WINDOW",
+        "RAILROAD-BRIDGE",
+        "GATE",
+        "WATER",
+        "RIVER",
+        "SUPERMARKET",
+        "RESTAURANT-OBJECT",
+        "STREET-BRIDGE",
+        "GLASS",
+        "RAILROAD-TRACKS",
+        "SMOKE",
+        "NOTE",
+        "RIVER-BANK",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": 25,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "MAIN-LIBRARY": {
+      "action": "MAIN-LIBRARY-F",
+      "asset_ref": null,
+      "desc": "Main Library",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SE",
+          "target": "SOUTHWAY-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "MAIN-LIBRARY-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "MAIN-STREET-BRIDGE": {
+      "action": "MAIN-STREET-BRIDGE-F",
+      "asset_ref": null,
+      "desc": "Main Street Bridge",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "NE",
+            "SE",
+            "S",
+            "SW",
+            "NW"
+          ],
+          "direction": "N",
+          "gate_fn": "RIVER-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "MAIN-STREET-BRIDGE-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "MAIN-AND-WICKER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "STREET-BRIDGE",
+        "RIVER",
+        "RIVER-BANK",
+        "WATER"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "MASTER-BEDROOM": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Master Bedroom",
+      "desc_variants": null,
+      "description": "This is a huge, round bedroom, encircled by windows. A stairway leads down to the living room. As elsewhere, the furniture has been removed.",
+      "edges": [
+        {
+          "direction": "DOWN",
+          "target": "EPILOGUE-LIVING-ROOM",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "LIVING-ROOM-OBJECT",
+        "BEDROOM-OBJECT",
+        "STAIRS",
+        "GLOBAL-WINDOW"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "MIDLAND-AND-CHURCH": {
+      "action": "MIDLAND-AND-CHURCH-F",
+      "asset_ref": null,
+      "desc": "Midland & Church",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "SE"
+          ],
+          "direction": "E",
+          "target": "CEMETERY",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "CHURCH-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "CONSTRUCTION-SITE-5-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "MIDLAND-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "CEMETERY-OBJECT",
+        "RAILROAD-YARD",
+        "CONSTRUCTION-OBJECT",
+        "PEOPLE",
+        "RECTORY-OBJECT",
+        "GATE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "MIDLAND-AND-RIVER": {
+      "action": "MIDLAND-AND-RIVER-F",
+      "asset_ref": null,
+      "desc": "Midland & River",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "BODANSKI-SQUARE",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "gate_fn": "TRAIN-STATION-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "MIDLAND-AND-CHURCH",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "SKYCAR-LOT-3",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "MAIN-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "OFFICE-BUILDING-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "GLASS",
+        "CARLOT",
+        "CHURCH-OBJECT",
+        "TRAIN-STATION-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "MUSEUM-ENTRANCE": {
+      "action": "MUSEUM-ENTRANCE-F",
+      "asset_ref": null,
+      "desc": "Museum Entrance",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "SKYCAR-LOT-6",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "RIVERSIDE-PARK-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "S",
+          "gate_fn": "RAILROAD-MUSEUM-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "BODANSKI-SQUARE",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "CINEMA-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "GLOBAL-SIGN",
+        "MUSEUM-OBJECT",
+        "MOVIE-THEATRE-OBJECT",
+        "PEOPLE",
+        "PARK-OBJECT",
+        "CARLOT"
+      ],
+      "objects": [],
+      "scene": 100,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "NEWS": {
+      "action": "NEWS-F",
+      "asset_ref": null,
+      "desc": "World News Network Feed",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "OUTLETS"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": null,
+      "zone": "prism"
+    },
+    "OFFICE": {
+      "action": "OFFICE-F",
+      "asset_ref": null,
+      "desc": "Dr. Perelman's Office",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [
+        "ONBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "SHELVES",
+        "OUTLETS",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": null,
+      "zone": "prism"
+    },
+    "PARK-ENTRANCE": {
+      "action": "PARK-ENTRANCE-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "AQUARIUM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "SKYCAR-LOT-5",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "CENTRE-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "NW"
+          ],
+          "direction": "SW",
+          "gate_fn": "NO-ENTRANCE-TO-PARK-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "W",
+          "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "PARK-OBJECT",
+        "CARLOT",
+        "GATE",
+        "HALLEY-ESTATES-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "PARK-UNDERPASS": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Park Underpass",
+      "desc_variants": null,
+      "description": "At this point, the old, rarely-used interstate crosses over Park Street. The northern suburbs lie to the west, and east of here the street climbs a hill toward a water tower.",
+      "edges": [
+        {
+          "direction": "E",
+          "target": "WATER-TOWER",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "SUBURBS-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "ONBIT"
+      ],
+      "globals": [
+        "HIGHWAY",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "PARKVIEW-APARTMENTS": {
+      "action": "PARKVIEW-APARTMENTS-F",
+      "asset_ref": null,
+      "desc": "Parkview Apartments",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "W"
+          ],
+          "direction": "IN",
+          "gate_fn": "INNER-LOBBY-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "E"
+          ],
+          "direction": "OUT",
+          "target": "SOUTHWAY-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "MAILBOXES",
+        "PICTUREPHONE",
+        "GRAFFITI",
+        "PARKVIEW-APARTMENTS-OBJECT",
+        "GLASS"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "apartment"
+    },
+    "PARKVIEW-HALL": {
+      "action": "PARKVIEW-HALL-F",
+      "asset_ref": null,
+      "desc": "Hall Near Your Apartment",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "N"
+          ],
+          "direction": "IN",
+          "door_id": "APARTMENT-DOOR",
+          "target": "LIVING-ROOM",
+          "type": "door"
+        },
+        {
+          "aliases": [
+            "OUT",
+            "DOWN"
+          ],
+          "direction": "E",
+          "gate_fn": "HALL-NEAR-YOUR-APARTMENT-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "APARTMENT-DOOR",
+        "APARTMENT-OBJECT",
+        "STAIRS",
+        "HALLWAY",
+        "LIVING-ROOM-OBJECT",
+        "PARKVIEW-APARTMENTS-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "apartment"
+    },
+    "PATIO": {
+      "action": "PATIO-F",
+      "asset_ref": null,
+      "desc": "Patio",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "N",
+          "target": "SOLARIUM",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "SOLARIUM-OBJECT",
+        "PATIO-OBJECT",
+        "RIVER"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "PICKFORD-THEATRE": {
+      "action": "PICKFORD-THEATRE-F",
+      "asset_ref": null,
+      "desc": "Pickford Theatre",
+      "desc_variants": null,
+      "description": "This building is the last survivor of the fine old theatres of Rockvil's theatre district. The exit to River Street is to the west.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "W",
+          "target": "AQUARIUM-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "PICKFORD-THEATRE-OBJECT",
+        "PLAY"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "PIER": {
+      "action": "PIER-F",
+      "asset_ref": null,
+      "desc": "Pier",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "gate_fn": "POOL-HALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "SE",
+            "S"
+          ],
+          "direction": "E",
+          "gate_fn": "RIVER-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SW",
+          "target": "BAR",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "WICKER-AND-PIER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "WATER",
+        "RIVER",
+        "RIVER-BANK",
+        "BAR-OBJECT",
+        "POOL-HALL-OBJECT",
+        "PIER-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "POLICE-STATION": {
+      "action": "POLICE-STATION-F",
+      "asset_ref": null,
+      "desc": "Police Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NE",
+          "target": "ELM-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "JAIL-OBJECT",
+        "POLICE-STATION-OBJECT",
+        "DESK",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "POOL-HALL": {
+      "action": "POOL-HALL-F",
+      "asset_ref": null,
+      "desc": "Pool Hall",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SW",
+          "target": "PIER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "POOL-HALL-OBJECT",
+        "PIER-OBJECT",
+        "SMOKE",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "POST-OFFICE": {
+      "action": "POST-OFFICE-F",
+      "asset_ref": null,
+      "desc": "Post Office",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NW",
+          "target": "ELM-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "GLOBAL-SIGN",
+        "GLOBAL-WINDOW",
+        "POST-OFFICE-OBJECT",
+        "COUNTER",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "POWER-STATION": {
+      "action": "POWER-STATION-F",
+      "asset_ref": null,
+      "desc": "Power Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "N",
+          "target": "POWER-STATION-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "POWER-STATION-OBJECT",
+        "SMOKE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "POWER-STATION-ENTRANCE": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Power Station Entrance",
+      "desc_variants": null,
+      "description": "You are on River Street at the entrance of a utility station which lies to the south. The street continues southeast towards the River Street Bridge. Northeast of here is the entrance to a huge factory complex, and tenements line the street to the west and southwest.",
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "SKYCAR-FACTORY",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "RIVER-STREET-BRIDGE",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "S",
+          "target": "POWER-STATION",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "W"
+          ],
+          "direction": "SW",
+          "target": "TENEMENT-1",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "WICKER-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "POWER-STATION-OBJECT",
+        "WATER",
+        "RIVER",
+        "RIVER-BANK",
+        "STREET-BRIDGE",
+        "FACTORY-OBJECT",
+        "TENEMENT-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "RAILROAD-MUSEUM": {
+      "action": "RAILROAD-MUSEUM-F",
+      "asset_ref": null,
+      "desc": "Railroad Museum",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "N",
+          "target": "MUSEUM-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "RIVERSIDE-PARK-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "GLOBAL-WINDOW",
+        "MUSEUM-OBJECT",
+        "RAILROAD-YARD",
+        "EXHIBITS",
+        "PARK-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "RED-TUBECAR": {
+      "action": "TUBECAR-F",
+      "asset_ref": null,
+      "desc": "Tubecar",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "OUT",
+          "gate_fn": "RED-TUBECAR-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "TUBE-SIGN",
+        "GRAFFITI",
+        "TUBE-STATION",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "RIVER-AND-KENNEDY": {
+      "action": "RIVER-AND-KENNEDY-F",
+      "asset_ref": null,
+      "desc": "River & Kennedy",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "E",
+          "target": "AIRPORTWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "ROCKVIL-HIGH-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "AQUARIUM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "ATHLETIC-FIELD",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "RIVER-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "WATER",
+        "RESERVOIR",
+        "SCHOOL-OBJECT",
+        "FIELD",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "RIVER-AND-PARK": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "River & Park",
+      "desc_variants": null,
+      "description": "River Street, off to the east, ends here at Park Street, which curves from the south to the northwest. A stadium skycar lot is on the west side of Park, and some sort of athletic field is to the southeast. All along the north side of River Street is a vast expanse of placid water, Rockvil Reservoir.",
+      "edges": [
+        {
+          "direction": "E",
+          "target": "RIVER-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "ATHLETIC-FIELD",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "AQUARIUM-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "STADIUM-LOT-B",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "WATER-TOWER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "WATER",
+        "RESERVOIR",
+        "FIELD",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "RIVER-STREET-BRIDGE": {
+      "action": "RIVER-STREET-BRIDGE-F",
+      "asset_ref": null,
+      "desc": "River Street Bridge",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "NE",
+            "E",
+            "S",
+            "SW",
+            "W"
+          ],
+          "direction": "N",
+          "gate_fn": "RIVER-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "SUBURBS-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NW",
+          "target": "POWER-STATION-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "STREET-BRIDGE",
+        "RIVER",
+        "RIVER-BANK",
+        "WATER"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "RIVERSIDE-PARK": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Riverside Park",
+      "desc_variants": null,
+      "description": "This is the city's most popular park. From the hilltop is a beautiful view of the river as it bends off to the east. Paths to various exits lead north, northwest, west, and southwest.",
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "SYMPHONY-HALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "E",
+            "SE"
+          ],
+          "direction": "NE",
+          "gate_fn": "RIVER-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "RAILROAD-MUSEUM-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "MUSEUM-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "SKYCAR-LOT-6",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "PARKBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "RAILROAD-YARD",
+        "FENCE",
+        "RIVER",
+        "RIVER-BANK",
+        "WATER",
+        "PARK-OBJECT",
+        "CARLOT",
+        "GLOBAL-SIGN",
+        "MUSEUM-OBJECT",
+        "SYMPHONY-HALL-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "ROCKVIL-CENTRE": {
+      "action": "ROCKVILLE-CENTRE-F",
+      "asset_ref": null,
+      "desc": "Rockvil Centre",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "HALLEY-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "CENTRE-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "MAIN-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "DUNBARS-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "ELM-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "CITY-HALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "CITY-HALL-OBJECT",
+        "DUNBARS-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ROCKVIL-HIGH": {
+      "action": "ROCKVIL-HIGH-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "E",
+          "target": "AIRPORTWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "RIVER-AND-KENNEDY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "SCHOOL-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "ROCKVIL-MALL": {
+      "action": "ROCKVIL-MALL-F",
+      "asset_ref": null,
+      "desc": "Rockvil Mall",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "ELM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "E",
+          "gate_fn": "JOYBOOTH-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "SKYCAR-LOT-2",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "ELM-AND-KENNEDY",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "JOYBOOTH-OBJECT",
+        "MALL-OBJECT",
+        "CARLOT",
+        "STORE-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "ROCKVIL-REFORMATORY": {
+      "action": "ROCKVIL-REFORMATORY-F",
+      "asset_ref": null,
+      "desc": "Rockvil Reformatory",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "S"
+          ],
+          "direction": "OUT",
+          "target": "WATER-TOWER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "JAIL-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "ROCKVIL-STADIUM": {
+      "action": "ROCKVIL-STADIUM-F",
+      "asset_ref": null,
+      "desc": "Rockvil Stadium",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "STADIUM-LOT-C",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "STADIUM-LOT-B",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "STADIUM-LOT-A",
+          "type": "open"
+        },
+        {
+          "direction": "DOWN",
+          "gate_fn": "TUBES-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "STAIRS",
+        "ANIMAL",
+        "STADIUM-OBJECT",
+        "TUBE-STATION",
+        "FIELD",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "ROCKVIL-UNIVERSITY": {
+      "action": "ROCKVIL-UNIVERSITY-F",
+      "asset_ref": null,
+      "desc": "Rockvil University",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "HALLEY-AND-UNIVERSITY",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "gate_fn": "STUDENT-UNION-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "LECTURE-HALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "ELM-AND-UNIVERSITY",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "DORM-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "DORM-OBJECT",
+        "STUDENT-UNION-OBJECT",
+        "LECTURE-HALL-OBJECT",
+        "CAMPUS",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ROOFTOP": {
+      "action": "ROOFTOP-F",
+      "asset_ref": null,
+      "desc": "Research Center Rooftop",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "STAIRS",
+        "OUTLETS",
+        "FLOODLIGHT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": null,
+      "zone": "prism"
+    },
+    "ROW-HOUSES": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Row Houses",
+      "desc_variants": null,
+      "description": "You are standing just inside the front door of a row of renovated old brick three-story apartments. The inner door leads south, and Southway is just outside to the north.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "N",
+          "target": "SOUTHWAY-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "SOUTHWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "S",
+          "gate_fn": "INNER-LOBBY-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NW",
+          "target": "SOUTHWAY-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "UNOPENABLE-DOOR"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "ROYS-PAGODA": {
+      "action": "ROYS-PAGODA-F",
+      "asset_ref": null,
+      "desc": "Roy's Pagoda",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "N",
+          "target": "ELM-UNDERPASS",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "RESTAURANT-OBJECT",
+        "MENU",
+        "PEOPLE",
+        "GLOBAL-TABLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "SERVICE-STATION": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Service Station",
+      "desc_variants": null,
+      "description": "This is an unusually large skycar service center, where people can bring their cars for a quick battery replacement, scheduled maintenance, or minor repairs. The exit to the street is southeast.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SE",
+          "target": "AQUARIUM-AND-PARK",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "SERVICE-STATION-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "SIMONS": {
+      "action": "SIMONS-F",
+      "asset_ref": null,
+      "desc": "Simon's",
+      "desc_variants": null,
+      "description": "This expensive four-star restaurant is a favorite after-theatre dining spot. You can leave to the southwest.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SW",
+          "target": "BODANSKI-SQUARE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "RESTAURANT-OBJECT",
+        "MENU",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "SIMULATION-ROOM": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "(undefined)",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [],
+      "globals": [],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": "virtual_mode",
+      "zone": "prism"
+    },
+    "SKYBUS-TERMINAL": {
+      "action": "SKYBUS-TERMINAL-F",
+      "asset_ref": null,
+      "desc": "Skybus Terminal",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "DOWN",
+          "gate_fn": "TUBES-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SE",
+          "target": "MAIN-AND-KENNEDY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "SKYBUS-TERMINAL-OBJECT",
+        "GATE",
+        "STAIRS",
+        "TUBE-STATION",
+        "BOARDING-PLATFORM"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "SKYCAB": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Skycab",
+      "desc_variants": null,
+      "description": "This skycab is a luxurious, top-of-the-line model, a veritable sky limousine. The opulent features include reclining seats, tinted zero-glare windows, and a two-meter viewscreen.",
+      "edges": [],
+      "flags": [],
+      "globals": [
+        "GLOBAL-WINDOW",
+        "RIVER",
+        "PIER-OBJECT",
+        "PARK-OBJECT",
+        "MUSEUM-OBJECT",
+        "BSF-BASE",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "SKYCAR-FACTORY": {
+      "action": "SKYCAR-FACTORY-F",
+      "asset_ref": null,
+      "desc": "Skycar Factory",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "SW",
+          "target": "POWER-STATION-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "FACTORY-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "FACTORY-OBJECT",
+        "CARLOT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "SKYCAR-LOT-1": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Skycar Lot",
+      "desc_variants": null,
+      "description": "This is a car lot for the Foodville to the northeast. The exit is northwest. An industrial park is visible beyond the fence that borders the rear of the lot to the south and east.",
+      "edges": [
+        {
+          "direction": "NE",
+          "gate_fn": "FOODVILLE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NW",
+          "target": "SOUTHWAY-UNDERPASS",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "SUPERMARKET",
+        "CARLOT",
+        "INDUSTRIAL-PARK-OBJECT",
+        "NOTE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "skycar"
+    },
+    "SKYCAR-LOT-2": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Skycar Lot",
+      "desc_variants": null,
+      "description": "This large car lot serves Rockvil Mall, which lies to the north. There are exits from the lot to the southeast and southwest.",
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "ROCKVIL-MALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SE",
+          "target": "SOUTHWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "SOUTHWAY-AND-KENNEDY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "MALL-OBJECT",
+        "CARLOT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "skycar"
+    },
+    "SKYCAR-LOT-3": {
+      "action": "SKYCAR-LOT-3-F",
+      "asset_ref": null,
+      "desc": "Skycar Lot",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "S",
+          "target": "HEALTH-CENTER",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "MIDLAND-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "CARLOT",
+        "HEALTH-CENTER-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "skycar"
+    },
+    "SKYCAR-LOT-4": {
+      "action": "SKYCAR-LOT-4-F",
+      "asset_ref": null,
+      "desc": "Skycar Lot",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "AQUARIUM-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "AQUARIUM-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "ZOO",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "ZOO-OBJECT",
+        "PARK-OBJECT",
+        "CARLOT",
+        "GATE",
+        "AQUARIUM-OBJECT",
+        "HALLEY-ESTATES-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "skycar"
+    },
+    "SKYCAR-LOT-5": {
+      "action": "SKYCAR-LOT-5-F",
+      "asset_ref": null,
+      "desc": "Skycar Lot",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "FIRST-METHODIST-CHURCH",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "BODANSKI-SQUARE",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "PARK-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "VACANT-LOT",
+        "CARLOT",
+        "CHURCH-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "skycar"
+    },
+    "SKYCAR-LOT-6": {
+      "action": "SKYCAR-LOT-6-F",
+      "asset_ref": null,
+      "desc": "Skycar Lot",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "SYMPHONY-HALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "RIVERSIDE-PARK-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "MUSEUM-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "gate_fn": "CINEMA-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "GLOBAL-SIGN",
+        "FENCE",
+        "MOVIE-THEATRE-OBJECT",
+        "PARK-OBJECT",
+        "CARLOT",
+        "SYMPHONY-HALL-OBJECT",
+        "UNOPENABLE-DOOR"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "skycar"
+    },
+    "SKYCAR-LOT-7": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Skycar Lot",
+      "desc_variants": null,
+      "description": "You are in a parking lot with entrances to buildings to the east, west and south. The exit to the street is northeast.",
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "SYMPHONY-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "SYMPHONY-HALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "gate_fn": "CINEMA-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "W",
+          "target": "COLONIAL-HOTEL",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "GLOBAL-SIGN",
+        "FENCE",
+        "MOVIE-THEATRE-OBJECT",
+        "CARLOT",
+        "HOTEL-OBJECT",
+        "SYMPHONY-HALL-OBJECT",
+        "UNOPENABLE-DOOR"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "skycar"
+    },
+    "SLEEP-ROOM": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "(undefined)",
+      "desc_variants": null,
+      "description": null,
+      "edges": [],
+      "flags": [],
+      "globals": [],
+      "objects": [],
+      "scene": null,
+      "source_file": "prism.zil",
+      "special": "virtual_mode",
+      "zone": "prism"
+    },
+    "SOLARIUM": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Solarium",
+      "desc_variants": null,
+      "description": "This enclosed sunporch of your penthouse apartment is surrounded by an outdoor patio, accessible to the south. To the north is a sprawling living room.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "S",
+          "target": "PATIO",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "N",
+          "target": "EPILOGUE-LIVING-ROOM",
+          "type": "open"
+        }
+      ],
+      "flags": [],
+      "globals": [
+        "LIVING-ROOM-OBJECT",
+        "SOLARIUM-OBJECT",
+        "PATIO-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "apartment.zil",
+      "special": null,
+      "zone": "epilogue"
+    },
+    "SOUTHWAY-AND-KENNEDY": {
+      "action": "SOUTHWAY-AND-KENNEDY-F",
+      "asset_ref": null,
+      "desc": "Southway & Kennedy",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "ELM-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "SKYCAR-LOT-2",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "SOUTHWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "S",
+            "SW"
+          ],
+          "direction": "SE",
+          "target": "ROW-HOUSES",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "SOUTHWAY-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "CONSTRUCTION-SITE-1-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "CARLOT",
+        "CONSTRUCTION-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "SOUTHWAY-AND-PARK": {
+      "action": "SOUTHWAY-AND-PARK-F",
+      "asset_ref": null,
+      "desc": "Southway & Park",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "ELM-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "HOSPITAL-ANNEX",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "SOUTHWAY-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "ROW-HOUSES",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "gate_fn": "FOODVILLE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SW",
+          "target": "SOUTHWAY-UNDERPASS",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "PARKVIEW-APARTMENTS",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "gate_fn": "MAIN-LIBRARY-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "GLOBAL-SIGN",
+        "GLOBAL-WINDOW",
+        "SUPERMARKET",
+        "MAIN-LIBRARY-OBJECT",
+        "PEOPLE",
+        "HOSPITAL-OBJECT",
+        "ANNEX-OBJECT",
+        "NOTE",
+        "PARKVIEW-APARTMENTS-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "SOUTHWAY-AND-RIVER": {
+      "action": "SOUTHWAY-AND-RIVER-F",
+      "asset_ref": null,
+      "desc": "Southway & River",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "ELM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "SE"
+          ],
+          "direction": "NE",
+          "gate_fn": "NO-ENTRY-TO-HEIMAN-WORLD-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "CONSTRUCTION-SITE-2",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "BEND",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "ROW-HOUSES",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "SOUTHWAY-AND-KENNEDY",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "SKYCAR-LOT-2",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "RIVER",
+        "RIVER-BANK",
+        "CONSTRUCTION-OBJECT",
+        "HEIMAN-WORLD-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": 34,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "SOUTHWAY-UNDERPASS": {
+      "action": "SOUTHWAY-UNDERPASS-F",
+      "asset_ref": null,
+      "desc": "Southway Underpass",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "SOUTHWAY-AND-PARK",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "SE",
+            "S"
+          ],
+          "direction": "E",
+          "target": "SKYCAR-LOT-1",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "gate_fn": "SUBURBS-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NW",
+          "target": "FIREHOUSE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "ONBIT"
+      ],
+      "globals": [
+        "HIGHWAY",
+        "FIREHOUSE-OBJECT",
+        "CARLOT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ST-MICHAELS": {
+      "action": "ST-MICHAELS-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "E",
+          "target": "CHURCH-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "VACANT-LOT",
+        "CHURCH-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "STADIUM-LOT-A": {
+      "action": "STADIUM-LOT-A-F",
+      "asset_ref": null,
+      "desc": "Stadium Lot A",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "ROCKVIL-STADIUM",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "ZOO-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "STADIUM-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "STADIUM-LOT-B": {
+      "action": "STADIUM-LOT-B-F",
+      "asset_ref": null,
+      "desc": "Stadium Lot B",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "E",
+          "target": "RIVER-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "ROCKVIL-STADIUM",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "STADIUM-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "STADIUM-LOT-C": {
+      "action": "STADIUM-LOT-C-F",
+      "asset_ref": null,
+      "desc": "Stadium Lot C",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "WATER-TOWER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "ROCKVIL-STADIUM",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "FENCE",
+        "STADIUM-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "STOCK-EXCHANGE": {
+      "action": "STOCK-EXCHANGE-F",
+      "asset_ref": null,
+      "desc": "Stock Exchange",
+      "desc_variants": null,
+      "description": "This aging, impressive structure was once the economic center for the quad-state region (the Dakotas, Wyoming and Montana). However, in this day and age of decentralization made possible by electronic communications, the activity here is reduced in both quantity and importance. Much of the building has been converted to office space. Wide steel portals lead southeast and southwest.",
+      "edges": [
+        {
+          "direction": "SE",
+          "target": "ELM-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "ELM-AND-KENNEDY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "STOCK-EXCHANGE-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "STUDENT-UNION": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Student Union",
+      "desc_variants": null,
+      "description": "You are standing in the lobby of a wide sprawling building containing a cafeteria, a bookstore, an auditorium, and offices for student activities. The street is southwest of here.",
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SW",
+          "target": "ROCKVIL-UNIVERSITY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "CAMPUS",
+        "STUDENT-UNION-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "SYMPHONY-ENTRANCE": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Symphony Entrance",
+      "desc_variants": null,
+      "description": "Airportway curves northeast along the river toward the airport, and a road leads north into the military base. On the south side of the street is Symphony Hall, and next to it is a car lot.",
+      "edges": [
+        {
+          "direction": "N",
+          "target": "BASE-GATE",
+          "type": "open"
+        },
+        {
+          "direction": "NE",
+          "target": "AIRPORT-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "RIVER-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "S",
+          "gate_fn": "SYMPHONY-HALL-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SW",
+          "target": "SKYCAR-LOT-7",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "AIRPORTWAY-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "BSF-BASE",
+        "GLOBAL-SIGN",
+        "WATER",
+        "RIVER",
+        "CARLOT",
+        "SYMPHONY-HALL-OBJECT",
+        "RIVER-BANK",
+        "UNOPENABLE-DOOR",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "SYMPHONY-HALL": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Symphony Hall",
+      "desc_variants": null,
+      "description": "This is the home of the Rockvil Symphony Orchestra. An exterior balcony offers a fine view of the river to the east. There are exits to the southeast, south, west, and north.",
+      "edges": [
+        {
+          "direction": "N",
+          "target": "SYMPHONY-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "gate_fn": "RIVERSIDE-PARK-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "SKYCAR-LOT-6",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "SKYCAR-LOT-7",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "WATER",
+        "RIVER",
+        "RIVER-BANK",
+        "PARK-OBJECT",
+        "CARLOT",
+        "SYMPHONY-HALL-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "TENEMENT-1": {
+      "action": "TENEMENT-1-F",
+      "asset_ref": null,
+      "desc": "Tenement",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "WICKER-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "POWER-STATION-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "INDUSTRIAL-PARK-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "TENEMENT-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "TENEMENT-2": {
+      "action": "TENEMENT-F",
+      "asset_ref": null,
+      "desc": "Tenement",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SE",
+          "target": "FACTORY-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "TENEMENT-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "TENEMENT-3": {
+      "action": "TENEMENT-F",
+      "asset_ref": null,
+      "desc": "Tenement",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "SE",
+          "target": "WICKER-AND-PIER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "TENEMENT-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "TERMINAL": {
+      "action": "TERMINAL-F",
+      "asset_ref": null,
+      "desc": "Terminal",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "SPACEPORT-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "S",
+          "target": "AIRPORT-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "DOWN",
+          "gate_fn": "TUBES-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "STAIRS",
+        "AIRPORT-TERMINAL-OBJECT",
+        "GUN",
+        "TUBE-STATION",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": 34,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "THE-COACHMAN": {
+      "action": "THE-COACHMAN-F",
+      "asset_ref": null,
+      "desc": "The Coachman",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "NW",
+          "target": "MAIN-AND-WICKER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "RESTAURANT-OBJECT",
+        "MENU",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "TRAIN-STATION": {
+      "action": "TRAIN-STATION-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "E",
+          "gate_fn": "TRAIN-STATION-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NW",
+          "target": "BODANSKI-SQUARE",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "MIDLAND-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "CHURCH-OBJECT",
+        "TRAIN-STATION-OBJECT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "TUBE-AT-AIRPORT": {
+      "action": "BROWN-TUBE-STATION-F",
+      "asset_ref": null,
+      "desc": "Tube Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "UP",
+          "target": "TERMINAL",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "NW",
+            "IN"
+          ],
+          "direction": "SE",
+          "gate_fn": "BROWN-TUBECAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "TUBEBIT"
+      ],
+      "globals": [
+        "STAIRS",
+        "TUBE-SIGN",
+        "AIRPORT-TERMINAL-OBJECT",
+        "RAILROAD-TRACKS",
+        "PEOPLE",
+        "TUBE-STATION",
+        "BOARDING-PLATFORM"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "TUBE-AT-BODANSKI": {
+      "action": "BROWN-TUBE-STATION-F",
+      "asset_ref": null,
+      "desc": "Tube Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "UP",
+          "target": "BODANSKI-SQUARE",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "NW",
+            "IN"
+          ],
+          "direction": "SE",
+          "gate_fn": "BROWN-TUBECAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "TUBEBIT"
+      ],
+      "globals": [
+        "STAIRS",
+        "TUBE-SIGN",
+        "RAILROAD-TRACKS",
+        "TUBE-STATION",
+        "BOARDING-PLATFORM",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "TUBE-AT-FACTORY": {
+      "action": "RED-TUBE-STATION-F",
+      "asset_ref": null,
+      "desc": "Tube Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "NE",
+            "SW"
+          ],
+          "direction": "IN",
+          "gate_fn": "RED-TUBECAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "UP",
+          "target": "WICKER-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "TUBEBIT"
+      ],
+      "globals": [
+        "TUBE-SIGN",
+        "STAIRS",
+        "RAILROAD-TRACKS",
+        "TUBE-STATION",
+        "BOARDING-PLATFORM",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "TUBE-AT-HEIMAN": {
+      "action": "RED-TUBE-STATION-F",
+      "asset_ref": null,
+      "desc": "Tube Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "NE",
+            "SW"
+          ],
+          "direction": "IN",
+          "gate_fn": "RED-TUBECAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "UP",
+          "target": "ELM-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "TUBEBIT"
+      ],
+      "globals": [
+        "TUBE-SIGN",
+        "STAIRS",
+        "RAILROAD-TRACKS",
+        "TUBE-STATION",
+        "BOARDING-PLATFORM",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "TUBE-AT-PARK": {
+      "action": "RED-TUBE-STATION-F",
+      "asset_ref": null,
+      "desc": "Tube Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "NE",
+            "SW"
+          ],
+          "direction": "IN",
+          "gate_fn": "RED-TUBECAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "UP",
+          "target": "HALLEY-PARK-WEST",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "TUBEBIT"
+      ],
+      "globals": [
+        "TUBE-SIGN",
+        "STAIRS",
+        "RAILROAD-TRACKS",
+        "TUBE-STATION",
+        "BOARDING-PLATFORM",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "TUBE-AT-STADIUM": {
+      "action": "RED-TUBE-STATION-F",
+      "asset_ref": null,
+      "desc": "Tube Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "NE",
+            "SW"
+          ],
+          "direction": "IN",
+          "gate_fn": "RED-TUBECAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "UP",
+          "target": "ROCKVIL-STADIUM",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "TUBEBIT"
+      ],
+      "globals": [
+        "TUBE-SIGN",
+        "STAIRS",
+        "STADIUM-OBJECT",
+        "RAILROAD-TRACKS",
+        "TUBE-STATION",
+        "BOARDING-PLATFORM",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "TUBE-AT-UNIVERSITY": {
+      "action": "BROWN-TUBE-STATION-F",
+      "asset_ref": null,
+      "desc": "Tube Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "UP",
+          "target": "ELM-AND-UNIVERSITY",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "NW",
+            "IN"
+          ],
+          "direction": "SE",
+          "gate_fn": "BROWN-TUBECAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "TUBEBIT"
+      ],
+      "globals": [
+        "STAIRS",
+        "TUBE-SIGN",
+        "RAILROAD-TRACKS",
+        "TUBE-STATION",
+        "BOARDING-PLATFORM",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "TUBE-JUNCTION": {
+      "action": "TUBE-JUNCTION-F",
+      "asset_ref": null,
+      "desc": "Tube Station",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "UP",
+          "target": "SKYBUS-TERMINAL",
+          "type": "open"
+        },
+        {
+          "direction": "IN",
+          "gate_fn": "TUBECAR-AT-JUNCTION-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "SW"
+          ],
+          "direction": "NE",
+          "gate_fn": "RED-TUBECAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "SE"
+          ],
+          "direction": "NW",
+          "gate_fn": "BROWN-TUBECAR-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "TUBEBIT"
+      ],
+      "globals": [
+        "STAIRS",
+        "TUBE-SIGN",
+        "SKYBUS-TERMINAL-OBJECT",
+        "RAILROAD-TRACKS",
+        "PEOPLE",
+        "TUBE-STATION",
+        "BOARDING-PLATFORM"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "tube"
+    },
+    "UNIVERSITY-HEIGHTS": {
+      "action": "UNIVERSITY-HEIGHTS-F",
+      "asset_ref": null,
+      "desc": "University Heights",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "S"
+          ],
+          "direction": "IN",
+          "gate_fn": "INNER-LOBBY-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "aliases": [
+            "N"
+          ],
+          "direction": "OUT",
+          "target": "ELM-AND-UNIVERSITY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "UNOPENABLE-DOOR",
+        "MAILBOXES",
+        "PICTUREPHONE",
+        "GRAFFITI",
+        "GLASS",
+        "UNIVERSITY-HEIGHTS-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "VELDRAN-HOTEL": {
+      "action": null,
+      "asset_ref": null,
+      "desc": "Veldran Hotel",
+      "desc_variants": null,
+      "description": "This high-rise luxury hotel is frequented by business travellers attending conventions at Huang Hall across the street. The exit from the lobby is to the northwest.",
+      "edges": [
+        {
+          "aliases": [
+            "NW",
+            "OUT"
+          ],
+          "direction": "W",
+          "target": "CENTRE-AND-KENNEDY",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "HOTEL-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "WAREHOUSE-1": {
+      "action": "WAREHOUSE-1-F",
+      "asset_ref": null,
+      "desc": null,
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "NE",
+            "SE",
+            "S",
+            "SW",
+            "W",
+            "NW"
+          ],
+          "direction": "N",
+          "gate_fn": "WAREHOUSE-1-EXIT-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "E",
+          "target": "WICKER-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT",
+        "BADAREABIT"
+      ],
+      "globals": [
+        "VACANT-LOT",
+        "WAREHOUSE-OBJECT",
+        "FENCE",
+        "RAILROAD-TRACKS"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "WAREHOUSE-2": {
+      "action": "WAREHOUSE-2-F",
+      "asset_ref": null,
+      "desc": "Warehouse",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "aliases": [
+            "OUT"
+          ],
+          "direction": "S",
+          "target": "INDUSTRIAL-PARK-ENTRANCE",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "BADAREABIT"
+      ],
+      "globals": [
+        "WAREHOUSE-OBJECT"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "WATER-TOWER": {
+      "action": "WATER-TOWER-F",
+      "asset_ref": null,
+      "desc": "Water Tower",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "ROCKVIL-REFORMATORY",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "RIVER-AND-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "STADIUM-LOT-C",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "PARK-UNDERPASS",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "HIGHWAY",
+        "FENCE",
+        "WATER",
+        "RESERVOIR",
+        "JAIL-OBJECT",
+        "CARLOT",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "WELLS-THEATRE": {
+      "action": "WELLS-THEATRE-F",
+      "asset_ref": null,
+      "desc": "Wells Theatre",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "AIRPORTWAY-AND-RIVER",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "AQUARIUM-AND-RIVER",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "ONBIT"
+      ],
+      "globals": [
+        "WELLS-THEATRE-OBJECT",
+        "PLAY"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "WICKER-AND-PIER": {
+      "action": "WICKER-AND-PIER-F",
+      "asset_ref": null,
+      "desc": "Wicker & Pier",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "NE",
+          "target": "MAIN-AND-WICKER",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "gate_fn": "BOOKSTORE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SE",
+          "target": "PIER",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "gate_fn": "LIQUOR-STORE-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "SW",
+          "target": "FACTORY-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "TENEMENT-3",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "RAILROAD-BRIDGE",
+        "BOOKSTORE-OBJECT",
+        "LIQUOR-STORE-OBJECT",
+        "TENEMENT-OBJECT",
+        "GLOBAL-WINDOW",
+        "PIER-OBJECT",
+        "RAILROAD-TRACKS"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "WICKER-AND-RIVER": {
+      "action": "WICKER-AND-RIVER-F",
+      "asset_ref": null,
+      "desc": "Wicker & River",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "gate_fn": "CLOSED-FACTORY-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        },
+        {
+          "direction": "NE",
+          "target": "FACTORY-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "SE",
+          "target": "POWER-STATION-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "S",
+          "target": "TENEMENT-1",
+          "type": "open"
+        },
+        {
+          "direction": "SW",
+          "target": "INDUSTRIAL-PARK-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "WAREHOUSE-1",
+          "type": "open"
+        },
+        {
+          "direction": "NW",
+          "target": "BEND",
+          "type": "open"
+        },
+        {
+          "direction": "DOWN",
+          "gate_fn": "TUBES-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT",
+        "BADAREABIT",
+        "NARTICLEBIT"
+      ],
+      "globals": [
+        "TENEMENT-OBJECT",
+        "RAILROAD-BRIDGE",
+        "VACANT-LOT",
+        "WAREHOUSE-OBJECT",
+        "FACTORY-OBJECT",
+        "STAIRS",
+        "RAILROAD-TRACKS",
+        "TUBE-STATION",
+        "SOUP-KITCHEN"
+      ],
+      "objects": [],
+      "scene": 34,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    },
+    "ZOO": {
+      "action": "ZOO-F",
+      "asset_ref": null,
+      "desc": "Zoo",
+      "desc_variants": null,
+      "description": null,
+      "edges": [
+        {
+          "direction": "N",
+          "target": "ZOO-ENTRANCE",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "SKYCAR-LOT-4",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "S"
+          ],
+          "direction": "SE",
+          "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
+          "rules": [],
+          "target": null,
+          "type": "gated"
+        }
+      ],
+      "flags": [
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "HIGHWAY",
+        "ZOO-OBJECT",
+        "PARK-OBJECT",
+        "CARLOT",
+        "CHILDREN",
+        "GATE",
+        "ANIMAL",
+        "HALLEY-ESTATES-OBJECT",
+        "GLOBAL-SIGN",
+        "PEOPLE"
+      ],
+      "objects": [],
+      "scene": null,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "interior"
+    },
+    "ZOO-ENTRANCE": {
+      "action": "ZOO-ENTRANCE-F",
+      "asset_ref": null,
+      "desc": "Zoo Entrance",
+      "desc_variants": null,
+      "description": "You are on Aquarium Drive, where a road branches off to the south into the zoo. To the west, the Drive passes under the old interstate. North of here is the entrance to a stadium skycar lot.",
+      "edges": [
+        {
+          "direction": "N",
+          "target": "STADIUM-LOT-A",
+          "type": "open"
+        },
+        {
+          "direction": "E",
+          "target": "AQUARIUM-AND-PARK",
+          "type": "open"
+        },
+        {
+          "aliases": [
+            "IN"
+          ],
+          "direction": "S",
+          "target": "ZOO",
+          "type": "open"
+        },
+        {
+          "direction": "W",
+          "target": "AQUARIUM-UNDERPASS",
+          "type": "open"
+        }
+      ],
+      "flags": [
+        "STREETBIT",
+        "OUTSIDEBIT"
+      ],
+      "globals": [
+        "HIGHWAY",
+        "PEOPLE",
+        "ZOO-OBJECT"
+      ],
+      "objects": [],
+      "scene": 100,
+      "source_file": "rockvil.zil",
+      "special": null,
+      "zone": "street"
+    }
+  }
+}
