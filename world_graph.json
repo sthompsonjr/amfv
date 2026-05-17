@@ -1,38 +1,222 @@
 {
   "gate_defs": {
+    "mode_comm": [
+      {
+        "message": "To resume normal computer functions, abort Simulation Mode.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": true,
+            "name": "simulating"
+          }
+        }
+      },
+      {
+        "then": "allow",
+        "when": {}
+      }
+    ],
+    "mode_simulation": [
+      {
+        "message": "Access currently denied...see Perelman.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": true,
+            "name": "rorschach_queued"
+          }
+        }
+      },
+      {
+        "message": "It would be impolite to leave during the psych test.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": true,
+            "name": "psych_test_active"
+          }
+        }
+      },
+      {
+        "message": "You are not yet cleared for Simulation Mode. Please await approval.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": false,
+            "name": "sim_cleared"
+          }
+        }
+      },
+      {
+        "then": "allow",
+        "when": {}
+      }
+    ],
+    "mode_standard": [
+      {
+        "message": "That mode is not currently active.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": 4,
+            "name": "part_flag"
+          }
+        }
+      },
+      {
+        "message": "It would be impolite to leave during the psych test.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": true,
+            "name": "psych_test_active"
+          }
+        }
+      },
+      {
+        "message": "To resume normal computer functions, abort Simulation Mode.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": true,
+            "name": "simulating"
+          }
+        }
+      },
+      {
+        "then": "allow",
+        "when": {}
+      }
+    ],
+    "outlet_access": [
+      {
+        "message": "There are currently no active outlets.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": 4,
+            "name": "part_flag"
+          }
+        }
+      },
+      {
+        "then": "allow",
+        "when": {}
+      }
+    ],
+    "sim_2051": [
+      {
+        "message": "That simulation year is not yet available.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": false,
+            "name": "completed_tasks"
+          }
+        }
+      },
+      {
+        "then": "allow",
+        "when": {}
+      }
+    ],
+    "sim_2061": [
+      {
+        "message": "That simulation year is not yet available.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": false,
+            "name": "sim_2061_unlocked"
+          }
+        }
+      },
+      {
+        "then": "allow",
+        "when": {}
+      }
+    ],
+    "sim_2071": [
+      {
+        "message": "That simulation year is not yet available.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": false,
+            "name": "sim_2071_unlocked"
+          }
+        }
+      },
+      {
+        "then": "allow",
+        "when": {}
+      }
+    ],
+    "sim_2081": [
+      {
+        "message": "That simulation year is not yet available.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "eq": false,
+            "name": "sim_2081_unlocked"
+          }
+        }
+      },
+      {
+        "then": "allow",
+        "when": {}
+      }
+    ],
+    "sim_2091": [
+      {
+        "message": "That simulation year is not yet available.",
+        "then": "block",
+        "when": {
+          "flag": {
+            "name": "part_flag",
+            "neq": 4
+          }
+        }
+      },
+      {
+        "then": "allow",
+        "when": {}
+      }
+    ],
     "tube_access": [
       {
+        "message": "The Tube system closed five years ago!",
+        "then": "block",
         "when": {
           "syear": {
             "eq": [
               2071
             ]
           }
-        },
-        "then": "block",
-        "message": "The Tube system closed five years ago!"
+        }
       },
       {
+        "message": "As usual, the Tubes have closed for curfew.",
+        "then": "block",
         "when": {
-          "syear": {
-            "eq": [
-              2051,
-              2061
-            ]
-          },
           "stime": {
             "outside": [
               420,
               1250
             ]
+          },
+          "syear": {
+            "eq": [
+              2051,
+              2061
+            ]
           }
-        },
-        "then": "block",
-        "message": "As usual, the Tubes have closed for curfew."
+        }
       },
       {
-        "when": {},
-        "then": "allow"
+        "then": "allow",
+        "when": {}
       }
     ]
   },
@@ -123,26 +307,26 @@
           "gate_fn": "ROCKVIL-HIGH-ENTER-F",
           "rules": [
             {
+              "message": "The school isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "lt": 420
                 }
-              },
-              "then": "block",
-              "message": "The school isn't open yet."
+              }
             },
             {
+              "message": "The school seems to be closed for the night.",
+              "then": "block",
               "when": {
                 "stime": {
                   "gt": 1020
                 }
-              },
-              "then": "block",
-              "message": "The school seems to be closed for the night."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ROCKVIL-HIGH",
@@ -226,19 +410,19 @@
           "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-EAST",
@@ -303,76 +487,76 @@
           "gate_fn": "AQUARIUM-ENTER-F",
           "rules": [
             {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     720,
                     1020
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2061
+                    2071
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     660,
                     1080
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2041
+                    2061
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1320
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2051
+                    2041
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1200
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "AQUARIUM",
@@ -388,26 +572,26 @@
           "gate_fn": "BANK-ENTER-F",
           "rules": [
             {
+              "message": "The bank isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "lt": 480
                 }
-              },
-              "then": "block",
-              "message": "The bank isn't open yet."
+              }
             },
             {
+              "message": "The bank seems to be closed for the night.",
+              "then": "block",
               "when": {
                 "stime": {
                   "gt": 960
                 }
-              },
-              "then": "block",
-              "message": "The bank seems to be closed for the night."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "BANK",
@@ -448,16 +632,18 @@
           "gate_fn": "BURGER-MEISTER-ENTER-F",
           "rules": [
             {
+              "then": "allow",
               "when": {
                 "syear": {
                   "eq": [
                     2041
                   ]
                 }
-              },
-              "then": "allow"
+              }
             },
             {
+              "message": "The restaurant is closed at this hour, of course.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -465,13 +651,11 @@
                     1200
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The restaurant is closed at this hour, of course."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "BURGER-MEISTER",
@@ -487,76 +671,76 @@
           "gate_fn": "AQUARIUM-ENTER-F",
           "rules": [
             {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     720,
                     1020
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2061
+                    2071
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     660,
                     1080
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2041
+                    2061
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1320
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2051
+                    2041
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1200
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "AQUARIUM",
@@ -671,23 +855,23 @@
           "gate_fn": "SUBURBS-ENTER-F",
           "rules": [
             {
+              "message": "The collapsed highway blocks the road.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The collapsed highway blocks the road."
+              }
             },
             {
-              "when": {},
+              "message": "WARNING: You have reached the boundary of this simulation.",
               "then": "block",
-              "message": "WARNING: You have reached the boundary of this simulation."
+              "when": {}
             }
           ],
-          "target": null,
+          "target": "AQUARIUM-UNDERPASS",
           "type": "gated"
         }
       ],
@@ -778,18 +962,18 @@
           "gate_fn": "BAR-TO-ALLEY-F",
           "rules": [
             {
+              "message": "The bartender yells out, \"Hey buster, you can't leave with that mug!\"",
+              "then": "block",
               "when": {
                 "flag": {
                   "name": "holding_beer",
                   "value": true
                 }
-              },
-              "then": "block",
-              "message": "The bartender yells out, \"Hey buster, you can't leave with that mug!\""
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ALLEY",
@@ -800,18 +984,18 @@
           "gate_fn": "BAR-TO-PIER-F",
           "rules": [
             {
+              "message": "The bartender yells out, \"Hey buster, you can't leave with that mug!\"",
+              "then": "block",
               "when": {
                 "flag": {
                   "name": "holding_beer",
                   "value": true
                 }
-              },
-              "then": "block",
-              "message": "The bartender yells out, \"Hey buster, you can't leave with that mug!\""
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "PIER",
@@ -966,26 +1150,26 @@
           "gate_fn": "HARDWARE-STORE-ENTER-F",
           "rules": [
             {
+              "message": "The hardware store isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "lt": 600
                 }
-              },
-              "then": "block",
-              "message": "The hardware store isn't open yet."
+              }
             },
             {
+              "message": "The hardware store seems to be closed for the night.",
+              "then": "block",
               "when": {
                 "stime": {
                   "gt": 1080
                 }
-              },
-              "then": "block",
-              "message": "The hardware store seems to be closed for the night."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HARDWARE-STORE",
@@ -996,26 +1180,26 @@
           "gate_fn": "DRUG-STORE-ENTER-F",
           "rules": [
             {
+              "message": "The drug store isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "lt": 480
                 }
-              },
-              "then": "block",
-              "message": "The drug store isn't open yet."
+              }
             },
             {
+              "message": "The drug store seems to be closed for the night.",
+              "then": "block",
               "when": {
                 "stime": {
                   "gt": 1305
                 }
-              },
-              "then": "block",
-              "message": "The drug store seems to be closed for the night."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "DRUG-STORE",
@@ -1064,16 +1248,18 @@
           "gate_fn": "SIMONS-ENTER-F",
           "rules": [
             {
+              "then": "allow",
               "when": {
                 "syear": {
                   "eq": [
                     2041
                   ]
                 }
-              },
-              "then": "allow"
+              }
             },
             {
+              "message": "The restaurant is closed at this hour, of course.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -1081,13 +1267,11 @@
                     1200
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The restaurant is closed at this hour, of course."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "SIMONS",
@@ -1103,25 +1287,25 @@
           "gate_fn": "TRAIN-STATION-ENTER-F",
           "rules": [
             {
+              "message": "The station isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2041
-                  ]
-                },
                 "stime": {
                   "outside": [
                     660,
                     1260
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The station isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "TRAIN-STATION",
@@ -1145,9 +1329,9 @@
         {
           "direction": "DOWN",
           "gate_fn": "TUBES-ENTER-F",
+          "gate_ref": "tube_access",
           "target": "TUBE-AT-BODANSKI",
-          "type": "gated",
-          "gate_ref": "tube_access"
+          "type": "gated"
         }
       ],
       "flags": [
@@ -1201,36 +1385,6 @@
       "special": null,
       "zone": "interior"
     },
-    "BROWN-TUBECAR": {
-      "action": "TUBECAR-F",
-      "asset_ref": null,
-      "desc": "Tubecar",
-      "desc_variants": null,
-      "description": null,
-      "edges": [
-        {
-          "direction": "OUT",
-          "gate_fn": "BROWN-TUBECAR-EXIT-F",
-          "rules": [],
-          "target": null,
-          "type": "gated"
-        }
-      ],
-      "flags": [
-        "ONBIT"
-      ],
-      "globals": [
-        "TUBE-SIGN",
-        "GRAFFITI",
-        "TUBE-STATION",
-        "PEOPLE"
-      ],
-      "objects": [],
-      "scene": null,
-      "source_file": "rockvil.zil",
-      "special": null,
-      "zone": "tube"
-    },
     "BURGER-MEISTER": {
       "action": "BURGER-MEISTER-F",
       "asset_ref": null,
@@ -1246,18 +1400,18 @@
           "gate_fn": "BURGER-MEISTER-EXIT-F",
           "rules": [
             {
+              "message": "The bartender yells out, \"Hey buster, you can't leave with that mug!\"",
+              "then": "block",
               "when": {
                 "flag": {
                   "name": "holding_beer",
                   "value": true
                 }
-              },
-              "then": "block",
-              "message": "The bartender yells out, \"Hey buster, you can't leave with that mug!\""
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "AQUARIUM-AND-PARK",
@@ -1328,7 +1482,43 @@
       "desc": "PRISM Facility Cafeteria",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "OUT",
+          "target": "COMM-ROOM",
+          "type": "open"
+        }
+      ],
       "flags": [
         "ONBIT"
       ],
@@ -1475,19 +1665,19 @@
           "gate_fn": "CONSTRUCTION-SITE-4-ENTER-F",
           "rules": [
             {
+              "message": "A doorman turns you away from the building.",
+              "then": "block",
               "when": {
                 "syear": {
                   "neq": [
                     2041
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A doorman turns you away from the building."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CONSTRUCTION-SITE-4",
@@ -1501,19 +1691,19 @@
           "gate_fn": "ST-MICHAELS-ENTER-F",
           "rules": [
             {
+              "message": "The entrance is boarded over.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2061
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrance is boarded over."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ST-MICHAELS",
@@ -1524,19 +1714,19 @@
           "gate_fn": "CONSTRUCTION-SITE-5-ENTER-F",
           "rules": [
             {
+              "message": "The building is closed, its doorways and windows boarded over.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2061
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The building is closed, its doorways and windows boarded over."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CONSTRUCTION-SITE-5",
@@ -1578,12 +1768,12 @@
           "gate_fn": "INNER-LOBBY-ENTER-F",
           "rules": [
             {
-              "when": {},
+              "message": "The door to the inner lobby is locked.",
               "then": "block",
-              "message": "The door to the inner lobby is locked."
+              "when": {}
             }
           ],
-          "target": null,
+          "target": "CHURCH-STREET-APARTMENTS",
           "type": "gated"
         },
         {
@@ -1816,7 +2006,68 @@
       "desc": "(undefined)",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "outlet_ppcc",
+          "gate_ref": "outlet_access",
+          "target": "CONTROL-CENTER",
+          "type": "gated"
+        },
+        {
+          "direction": "outlet_rcro",
+          "gate_ref": "outlet_access",
+          "target": "ROOFTOP",
+          "type": "gated"
+        },
+        {
+          "direction": "outlet_peof",
+          "gate_ref": "outlet_access",
+          "target": "OFFICE",
+          "type": "gated"
+        },
+        {
+          "direction": "outlet_pcaf",
+          "gate_ref": "outlet_access",
+          "target": "CAFETERIA",
+          "type": "gated"
+        },
+        {
+          "direction": "outlet_maco",
+          "gate_ref": "outlet_access",
+          "target": "CORE",
+          "type": "gated"
+        },
+        {
+          "direction": "outlet_wnnf",
+          "gate_ref": "outlet_access",
+          "target": "NEWS",
+          "type": "gated"
+        }
+      ],
       "flags": [],
       "globals": [
         "OUTLETS"
@@ -1987,7 +2238,43 @@
       "desc": "PRISM Project Control Center",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "OUT",
+          "target": "COMM-ROOM",
+          "type": "open"
+        }
+      ],
       "flags": [
         "ONBIT"
       ],
@@ -2009,7 +2296,43 @@
       "desc": "Maintenance Core",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "OUT",
+          "target": "COMM-ROOM",
+          "type": "open"
+        }
+      ],
       "flags": [
         "ONBIT"
       ],
@@ -2296,44 +2619,44 @@
           "gate_fn": "STOCK-EXCHANGE-ENTER-F",
           "rules": [
             {
+              "message": "The stock exchange building isn't open yet.",
+              "then": "block",
               "when": {
+                "stime": {
+                  "outside": [
+                    420,
+                    1320
+                  ]
+                },
                 "syear": {
                   "eq": [
                     2051,
                     2061,
                     2071
                   ]
-                },
-                "stime": {
-                  "outside": [
-                    420,
-                    1320
-                  ]
                 }
-              },
-              "then": "block",
-              "message": "The stock exchange building isn't open yet."
+              }
             },
             {
+              "message": "The stock exchange building isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2041
-                  ]
-                },
                 "stime": {
                   "outside": [
                     360,
                     1320
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The stock exchange building isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "STOCK-EXCHANGE",
@@ -2349,44 +2672,44 @@
           "gate_fn": "ROCKVIL-MALL-ENTER-F",
           "rules": [
             {
+              "message": "The Mall isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     720,
                     1080
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2071
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Mall isn't open yet."
+              }
             },
             {
+              "message": "The Mall isn't open yet.",
+              "then": "block",
               "when": {
+                "stime": {
+                  "outside": [
+                    480,
+                    1320
+                  ]
+                },
                 "syear": {
                   "eq": [
                     2041,
                     2051,
                     2061
                   ]
-                },
-                "stime": {
-                  "outside": [
-                    480,
-                    1320
-                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Mall isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ROCKVIL-MALL",
@@ -2412,19 +2735,19 @@
           "gate_fn": "KENNEDY-PARK-ENTER-F",
           "rules": [
             {
+              "message": "The entrances to the townhouses are all locked.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrances to the townhouses are all locked."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "KENNEDY-PARK",
@@ -2469,19 +2792,19 @@
           "gate_fn": "KENNEDY-PARK-ENTER-F",
           "rules": [
             {
+              "message": "The entrances to the townhouses are all locked.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrances to the townhouses are all locked."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "KENNEDY-PARK",
@@ -2517,26 +2840,26 @@
           "gate_fn": "COURTHOUSE-ENTER-F",
           "rules": [
             {
+              "message": "The courthouse isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "lt": 570
                 }
-              },
-              "then": "block",
-              "message": "The courthouse isn't open yet."
+              }
             },
             {
+              "message": "The courthouse seems to be closed for the night.",
+              "then": "block",
               "when": {
                 "stime": {
                   "gt": 990
                 }
-              },
-              "then": "block",
-              "message": "The courthouse seems to be closed for the night."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "COURTHOUSE",
@@ -2595,44 +2918,44 @@
           "gate_fn": "ROCKVIL-MALL-ENTER-F",
           "rules": [
             {
+              "message": "The Mall isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     720,
                     1080
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2071
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Mall isn't open yet."
+              }
             },
             {
+              "message": "The Mall isn't open yet.",
+              "then": "block",
               "when": {
+                "stime": {
+                  "outside": [
+                    480,
+                    1320
+                  ]
+                },
                 "syear": {
                   "eq": [
                     2041,
                     2051,
                     2061
                   ]
-                },
-                "stime": {
-                  "outside": [
-                    480,
-                    1320
-                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Mall isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ROCKVIL-MALL",
@@ -2648,44 +2971,44 @@
           "gate_fn": "STOCK-EXCHANGE-ENTER-F",
           "rules": [
             {
+              "message": "The stock exchange building isn't open yet.",
+              "then": "block",
               "when": {
+                "stime": {
+                  "outside": [
+                    420,
+                    1320
+                  ]
+                },
                 "syear": {
                   "eq": [
                     2051,
                     2061,
                     2071
                   ]
-                },
-                "stime": {
-                  "outside": [
-                    420,
-                    1320
-                  ]
                 }
-              },
-              "then": "block",
-              "message": "The stock exchange building isn't open yet."
+              }
             },
             {
+              "message": "The stock exchange building isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2041
-                  ]
-                },
                 "stime": {
                   "outside": [
                     360,
                     1320
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The stock exchange building isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "STOCK-EXCHANGE",
@@ -2694,9 +3017,9 @@
         {
           "direction": "DOWN",
           "gate_fn": "TUBES-ENTER-F",
+          "gate_ref": "tube_access",
           "target": "TUBE-AT-HEIMAN",
-          "type": "gated",
-          "gate_ref": "tube_access"
+          "type": "gated"
         }
       ],
       "flags": [
@@ -2748,9 +3071,9 @@
         {
           "direction": "DOWN",
           "gate_fn": "TUBES-ENTER-F",
+          "gate_ref": "tube_access",
           "target": "TUBE-AT-UNIVERSITY",
-          "type": "gated",
-          "gate_ref": "tube_access"
+          "type": "gated"
         }
       ],
       "flags": [
@@ -2783,16 +3106,18 @@
           "gate_fn": "EZZIS-BAR-ENTER-F",
           "rules": [
             {
+              "then": "allow",
               "when": {
                 "syear": {
                   "eq": [
                     2041
                   ]
                 }
-              },
-              "then": "allow"
+              }
             },
             {
+              "message": "The bar is closed at this hour, of course.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -2800,13 +3125,11 @@
                     1200
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The bar is closed at this hour, of course."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "EZZIS-BAR",
@@ -2822,16 +3145,18 @@
           "gate_fn": "ROYS-PAGODA-ENTER-F",
           "rules": [
             {
+              "then": "allow",
               "when": {
                 "syear": {
                   "eq": [
                     2041
                   ]
                 }
-              },
-              "then": "allow"
+              }
             },
             {
+              "message": "The restaurant is closed at this hour, of course.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -2839,13 +3164,11 @@
                     1200
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The restaurant is closed at this hour, of course."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ROYS-PAGODA",
@@ -2856,23 +3179,23 @@
           "gate_fn": "SUBURBS-ENTER-F",
           "rules": [
             {
+              "message": "The collapsed highway blocks the road.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The collapsed highway blocks the road."
+              }
             },
             {
-              "when": {},
+              "message": "WARNING: You have reached the boundary of this simulation.",
               "then": "block",
-              "message": "WARNING: You have reached the boundary of this simulation."
+              "when": {}
             }
           ],
-          "target": null,
+          "target": "ELM-UNDERPASS",
           "type": "gated"
         }
       ],
@@ -3012,18 +3335,18 @@
           "gate_fn": "EZZIS-BAR-EXIT-F",
           "rules": [
             {
+              "message": "The bartender yells out, \"Hey buster, you can't leave with that mug!\"",
+              "then": "block",
               "when": {
                 "flag": {
                   "name": "holding_beer",
                   "value": true
                 }
-              },
-              "then": "block",
-              "message": "The bartender yells out, \"Hey buster, you can't leave with that mug!\""
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ELM-UNDERPASS",
@@ -3056,26 +3379,26 @@
           "gate_fn": "GUN-SHOP-ENTER-F",
           "rules": [
             {
+              "message": "The gun store isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "lt": 630
                 }
-              },
-              "then": "block",
-              "message": "The gun store isn't open yet."
+              }
             },
             {
+              "message": "The gun store seems to be closed for the night.",
+              "then": "block",
               "when": {
                 "stime": {
                   "gt": 1230
                 }
-              },
-              "then": "block",
-              "message": "The gun store seems to be closed for the night."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "GUN-SHOP",
@@ -3370,19 +3693,19 @@
           "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-EAST",
@@ -3403,6 +3726,8 @@
           "gate_fn": "HALLEY-MUSEUM-ENTER-F",
           "rules": [
             {
+              "message": "The entrance is boarded over.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
@@ -3410,31 +3735,29 @@
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrance is boarded over."
+              }
             },
             {
+              "message": "The museum isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2041,
-                    2051
-                  ]
-                },
                 "stime": {
                   "outside": [
                     600,
                     1290
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041,
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The museum isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-MUSEUM",
@@ -3450,19 +3773,19 @@
           "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-WEST",
@@ -3502,19 +3825,19 @@
           "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-WEST",
@@ -3598,76 +3921,76 @@
           "gate_fn": "AQUARIUM-ENTER-F",
           "rules": [
             {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     720,
                     1020
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2061
+                    2071
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     660,
                     1080
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2041
+                    2061
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1320
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2051
+                    2041
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1200
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "AQUARIUM",
@@ -3693,19 +4016,19 @@
           "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-WEST",
@@ -3753,19 +4076,19 @@
           "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-EAST",
@@ -3792,9 +4115,9 @@
         {
           "direction": "DOWN",
           "gate_fn": "TUBES-ENTER-F",
+          "gate_ref": "tube_access",
           "target": "TUBE-AT-PARK",
-          "type": "gated",
-          "gate_ref": "tube_access"
+          "type": "gated"
         }
       ],
       "flags": [
@@ -3993,19 +4316,19 @@
           "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-EAST",
@@ -4152,7 +4475,32 @@
       "desc": "(undefined)",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        }
+      ],
       "flags": [],
       "globals": [],
       "objects": [],
@@ -4196,18 +4544,18 @@
           "gate_fn": "JOYBOOTH-EXIT-F",
           "rules": [
             {
+              "message": "You'll have to remove the headset first.",
+              "then": "block",
               "when": {
                 "flag": {
                   "name": "wearing_headset",
                   "value": true
                 }
-              },
-              "then": "block",
-              "message": "You'll have to remove the headset first."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ROCKVIL-MALL",
@@ -4363,7 +4711,32 @@
       "desc": "(undefined)",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        }
+      ],
       "flags": [],
       "globals": [],
       "objects": [],
@@ -4426,28 +4799,28 @@
           "gate_fn": "APARTMENT-EXIT-F",
           "rules": [
             {
+              "message": "The door is closed.",
+              "then": "block",
               "when": {
                 "flag": {
                   "name": "apartment_door_open",
                   "value": false
                 }
-              },
-              "then": "block",
-              "message": "The door is closed."
+              }
             },
             {
+              "message": "Jill won't let you take the baby outside.",
+              "then": "block",
               "when": {
                 "flag": {
                   "name": "holding_baby",
                   "value": true
                 }
-              },
-              "then": "block",
-              "message": "Jill won't let you take the baby outside."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "PARKVIEW-HALL",
@@ -4513,19 +4886,19 @@
           "gate_fn": "CONSTRUCTION-SITE-3-ENTER-F",
           "rules": [
             {
+              "message": "A security guard escorts you away from the building.",
+              "then": "block",
               "when": {
                 "syear": {
                   "neq": [
                     2041
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A security guard escorts you away from the building."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CONSTRUCTION-SITE-3",
@@ -4541,19 +4914,19 @@
           "gate_fn": "CONSTRUCTION-SITE-4-ENTER-F",
           "rules": [
             {
+              "message": "A doorman turns you away from the building.",
+              "then": "block",
               "when": {
                 "syear": {
                   "neq": [
                     2041
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A doorman turns you away from the building."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CONSTRUCTION-SITE-4",
@@ -4606,19 +4979,19 @@
           "gate_fn": "KENNEDY-PARK-ENTER-F",
           "rules": [
             {
+              "message": "The entrances to the townhouses are all locked.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrances to the townhouses are all locked."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "KENNEDY-PARK",
@@ -4634,19 +5007,19 @@
           "gate_fn": "SKYBUS-TERMINAL-ENTER-F",
           "rules": [
             {
+              "message": "The entrance is boarded over.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrance is boarded over."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "SKYBUS-TERMINAL",
@@ -4751,16 +5124,18 @@
           "gate_fn": "THE-COACHMAN-ENTER-F",
           "rules": [
             {
+              "then": "allow",
               "when": {
                 "syear": {
                   "eq": [
                     2041
                   ]
                 }
-              },
-              "then": "allow"
+              }
             },
             {
+              "message": "The restaurant is closed at this hour, of course.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -4768,13 +5143,11 @@
                     1200
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The restaurant is closed at this hour, of course."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "THE-COACHMAN",
@@ -4790,60 +5163,60 @@
           "gate_fn": "FOODVILLE-ENTER-F",
           "rules": [
             {
+              "message": "According to a note on the door, the Foodville is only open from 11:30am until 4:00 in the afternoon.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     700,
                     960
                   ]
-                }
-              },
-              "then": "block",
-              "message": "According to a note on the door, the Foodville is only open from 11:30am until 4:00 in the afternoon."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2061
+                    2071
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Foodville isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1140
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Foodville isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2041,
-                    2051
+                    2061
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Foodville isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     480,
                     1320
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041,
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Foodville isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "FOODVILLE-2",
@@ -4854,20 +5227,20 @@
           "gate_fn": "MAIN-AND-CHURCH-ENTER-F",
           "rules": [
             {
+              "message": "Three men armed with knives leap out of a doorway and slit your throat.",
+              "special": "death",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2081
                   ]
                 }
-              },
-              "then": "block",
-              "message": "Three men armed with knives leap out of a doorway and slit your throat.",
-              "special": "death"
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "MAIN-AND-CHURCH",
@@ -4944,24 +5317,24 @@
           "gate_fn": "MAIN-STREET-BRIDGE-EXIT-F",
           "rules": [
             {
+              "message": "A pack of wild dogs surrounds you and tears you to shreds!",
+              "special": "death",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2081
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A pack of wild dogs surrounds you and tears you to shreds!",
-              "special": "death"
+              }
             },
             {
-              "when": {},
+              "message": "WARNING: You have reached the boundary of this simulation.",
               "then": "block",
-              "message": "WARNING: You have reached the boundary of this simulation."
+              "when": {}
             }
           ],
-          "target": null,
+          "target": "MAIN-STREET-BRIDGE",
           "type": "gated"
         },
         {
@@ -5036,19 +5409,19 @@
           "gate_fn": "CONSTRUCTION-SITE-5-ENTER-F",
           "rules": [
             {
+              "message": "The building is closed, its doorways and windows boarded over.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2061
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The building is closed, its doorways and windows boarded over."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CONSTRUCTION-SITE-5",
@@ -5096,25 +5469,25 @@
           "gate_fn": "TRAIN-STATION-ENTER-F",
           "rules": [
             {
+              "message": "The station isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2041
-                  ]
-                },
                 "stime": {
                   "outside": [
                     660,
                     1260
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The station isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "TRAIN-STATION",
@@ -5171,19 +5544,19 @@
           "gate_fn": "RIVERSIDE-PARK-ENTER-F",
           "rules": [
             {
+              "message": "A guard stops you and informs you that admission to the park is restricted.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A guard stops you and informs you that admission to the park is restricted."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "RIVERSIDE-PARK",
@@ -5197,6 +5570,8 @@
           "gate_fn": "RAILROAD-MUSEUM-ENTER-F",
           "rules": [
             {
+              "message": "The entrance is boarded over.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
@@ -5204,31 +5579,29 @@
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrance is boarded over."
+              }
             },
             {
+              "message": "The museum isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2041,
-                    2051
-                  ]
-                },
                 "stime": {
                   "outside": [
                     615,
                     1185
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041,
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The museum isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "RAILROAD-MUSEUM",
@@ -5244,16 +5617,18 @@
           "gate_fn": "CINEMA-ENTER-F",
           "rules": [
             {
+              "then": "allow",
               "when": {
                 "syear": {
                   "eq": [
                     2041
                   ]
                 }
-              },
-              "then": "allow"
+              }
             },
             {
+              "message": "The movie theatre is closed at this hour, of course.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -5261,13 +5636,11 @@
                     1200
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The movie theatre is closed at this hour, of course."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CINEMA",
@@ -5298,7 +5671,43 @@
       "desc": "World News Network Feed",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "OUT",
+          "target": "COMM-ROOM",
+          "type": "open"
+        }
+      ],
       "flags": [
         "ONBIT"
       ],
@@ -5317,7 +5726,43 @@
       "desc": "Dr. Perelman's Office",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "OUT",
+          "target": "COMM-ROOM",
+          "type": "open"
+        }
+      ],
       "flags": [
         "ONBIT",
         "NARTICLEBIT"
@@ -5363,19 +5808,19 @@
           "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-EAST",
@@ -5416,23 +5861,23 @@
           "gate_fn": "SUBURBS-ENTER-F",
           "rules": [
             {
+              "message": "The collapsed highway blocks the road.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The collapsed highway blocks the road."
+              }
             },
             {
-              "when": {},
+              "message": "WARNING: You have reached the boundary of this simulation.",
               "then": "block",
-              "message": "WARNING: You have reached the boundary of this simulation."
+              "when": {}
             }
           ],
-          "target": null,
+          "target": "PARK-UNDERPASS",
           "type": "gated"
         }
       ],
@@ -5465,18 +5910,18 @@
           "gate_fn": "INNER-LOBBY-ENTER-F",
           "rules": [
             {
+              "message": "The door to the inner lobby is locked.",
+              "then": "block",
               "when": {
                 "flag": {
                   "name": "parkview_door_open",
                   "value": false
                 }
-              },
-              "then": "block",
-              "message": "The door to the inner lobby is locked."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "PARKVIEW-HALL",
@@ -5615,16 +6060,18 @@
           "gate_fn": "POOL-HALL-ENTER-F",
           "rules": [
             {
+              "then": "allow",
               "when": {
                 "syear": {
                   "eq": [
                     2041
                   ]
                 }
-              },
-              "then": "allow"
+              }
             },
             {
+              "message": "The pool hall is closed at this hour, of course.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -5632,13 +6079,11 @@
                     1200
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The pool hall is closed at this hour, of course."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "POOL-HALL",
@@ -5878,19 +6323,19 @@
           "gate_fn": "RIVERSIDE-PARK-ENTER-F",
           "rules": [
             {
+              "message": "A guard stops you and informs you that admission to the park is restricted.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A guard stops you and informs you that admission to the park is restricted."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "RIVERSIDE-PARK",
@@ -5914,36 +6359,6 @@
       "special": null,
       "zone": "interior"
     },
-    "RED-TUBECAR": {
-      "action": "TUBECAR-F",
-      "asset_ref": null,
-      "desc": "Tubecar",
-      "desc_variants": null,
-      "description": null,
-      "edges": [
-        {
-          "direction": "OUT",
-          "gate_fn": "RED-TUBECAR-EXIT-F",
-          "rules": [],
-          "target": null,
-          "type": "gated"
-        }
-      ],
-      "flags": [
-        "ONBIT"
-      ],
-      "globals": [
-        "TUBE-SIGN",
-        "GRAFFITI",
-        "TUBE-STATION",
-        "PEOPLE"
-      ],
-      "objects": [],
-      "scene": null,
-      "source_file": "rockvil.zil",
-      "special": null,
-      "zone": "tube"
-    },
     "RIVER-AND-KENNEDY": {
       "action": "RIVER-AND-KENNEDY-F",
       "asset_ref": null,
@@ -5961,26 +6376,26 @@
           "gate_fn": "ROCKVIL-HIGH-ENTER-F",
           "rules": [
             {
+              "message": "The school isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "lt": 420
                 }
-              },
-              "then": "block",
-              "message": "The school isn't open yet."
+              }
             },
             {
+              "message": "The school seems to be closed for the night.",
+              "then": "block",
               "when": {
                 "stime": {
                   "gt": 1020
                 }
-              },
-              "then": "block",
-              "message": "The school seems to be closed for the night."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ROCKVIL-HIGH",
@@ -6084,23 +6499,23 @@
           "gate_fn": "SUBURBS-ENTER-F",
           "rules": [
             {
+              "message": "The collapsed highway blocks the road.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The collapsed highway blocks the road."
+              }
             },
             {
-              "when": {},
+              "message": "WARNING: You have reached the boundary of this simulation.",
               "then": "block",
-              "message": "WARNING: You have reached the boundary of this simulation."
+              "when": {}
             }
           ],
-          "target": null,
+          "target": "RIVER-STREET-BRIDGE",
           "type": "gated"
         },
         {
@@ -6138,19 +6553,19 @@
           "gate_fn": "SYMPHONY-HALL-ENTER-F",
           "rules": [
             {
+              "message": "Symphony Hall has been closed for several years now.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "Symphony Hall has been closed for several years now."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "SYMPHONY-HALL",
@@ -6161,6 +6576,8 @@
           "gate_fn": "RAILROAD-MUSEUM-ENTER-F",
           "rules": [
             {
+              "message": "The entrance is boarded over.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
@@ -6168,31 +6585,29 @@
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrance is boarded over."
+              }
             },
             {
+              "message": "The museum isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2041,
-                    2051
-                  ]
-                },
                 "stime": {
                   "outside": [
                     615,
                     1185
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041,
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The museum isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "RAILROAD-MUSEUM",
@@ -6260,17 +6675,19 @@
           "gate_fn": "DUNBARS-ENTER-F",
           "rules": [
             {
+              "message": "A security guard stops you at the doorway and turns you away.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A security guard stops you at the doorway and turns you away."
+              }
             },
             {
+              "message": "Dunbar's isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -6278,13 +6695,11 @@
                     1260
                   ]
                 }
-              },
-              "then": "block",
-              "message": "Dunbar's isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "DUNBARS",
@@ -6300,26 +6715,26 @@
           "gate_fn": "CITY-HALL-ENTER-F",
           "rules": [
             {
+              "message": "City Hall isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "lt": 600
                 }
-              },
-              "then": "block",
-              "message": "City Hall isn't open yet."
+              }
             },
             {
+              "message": "City Hall seems to be closed for the night.",
+              "then": "block",
               "when": {
                 "stime": {
                   "gt": 1080
                 }
-              },
-              "then": "block",
-              "message": "City Hall seems to be closed for the night."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CITY-HALL",
@@ -6392,6 +6807,8 @@
           "gate_fn": "JOYBOOTH-ENTER-F",
           "rules": [
             {
+              "message": "There's nothing in that direction -- just a featureless wall.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
@@ -6399,13 +6816,11 @@
                     2061
                   ]
                 }
-              },
-              "then": "block",
-              "message": "There's nothing in that direction -- just a featureless wall."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "JOYBOOTH",
@@ -6489,9 +6904,9 @@
         {
           "direction": "DOWN",
           "gate_fn": "TUBES-ENTER-F",
+          "gate_ref": "tube_access",
           "target": "TUBE-AT-STADIUM",
-          "type": "gated",
-          "gate_ref": "tube_access"
+          "type": "gated"
         }
       ],
       "flags": [
@@ -6529,19 +6944,19 @@
           "gate_fn": "STUDENT-UNION-ENTER-F",
           "rules": [
             {
+              "message": "The entrance is boarded over.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrance is boarded over."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "STUDENT-UNION",
@@ -6552,19 +6967,19 @@
           "gate_fn": "LECTURE-HALL-ENTER-F",
           "rules": [
             {
+              "message": "The entrance is boarded over.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The entrance is boarded over."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "LECTURE-HALL",
@@ -6580,21 +6995,21 @@
           "gate_fn": "DORM-ENTER-F",
           "rules": [
             {
+              "death_message": "As you stand in the lobby, squatters jump you and slit your throat.",
+              "message": "Some of the boards over the entrance have been pried away. You hesitate, because it's so dangerous to enter deserted buildings these days.",
+              "special": "death_confirmation",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "Some of the boards over the entrance have been pried away. You hesitate, because it's so dangerous to enter deserted buildings these days.",
-              "special": "death_confirmation",
-              "death_message": "As you stand in the lobby, squatters jump you and slit your throat."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "DORM",
@@ -6626,7 +7041,43 @@
       "desc": "Research Center Rooftop",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "OUT",
+          "target": "COMM-ROOM",
+          "type": "open"
+        }
+      ],
       "flags": [
         "OUTSIDEBIT"
       ],
@@ -6670,12 +7121,12 @@
           "gate_fn": "INNER-LOBBY-ENTER-F",
           "rules": [
             {
-              "when": {},
+              "message": "The door to the inner lobby is locked.",
               "then": "block",
-              "message": "The door to the inner lobby is locked."
+              "when": {}
             }
           ],
-          "target": null,
+          "target": "ROW-HOUSES",
           "type": "gated"
         },
         {
@@ -6791,7 +7242,67 @@
       "desc": "(undefined)",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_sleep",
+          "gate_ref": "mode_standard",
+          "target": "SLEEP-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "sim_2041",
+          "target": "KENNEDY-PARK",
+          "type": "open"
+        },
+        {
+          "direction": "sim_2051",
+          "gate_ref": "sim_2051",
+          "target": "TUBE-AT-UNIVERSITY",
+          "type": "gated"
+        },
+        {
+          "direction": "sim_2061",
+          "gate_ref": "sim_2061",
+          "target": "SOUTHWAY-AND-RIVER",
+          "type": "gated"
+        },
+        {
+          "direction": "sim_2071",
+          "gate_ref": "sim_2071",
+          "target": "BODANSKI-SQUARE",
+          "type": "gated"
+        },
+        {
+          "direction": "sim_2081",
+          "gate_ref": "sim_2081",
+          "target": "MAIN-AND-WICKER",
+          "type": "gated"
+        },
+        {
+          "direction": "sim_2091",
+          "gate_ref": "sim_2091",
+          "target": "SOLARIUM",
+          "type": "gated"
+        }
+      ],
       "flags": [],
       "globals": [],
       "objects": [],
@@ -6810,9 +7321,9 @@
         {
           "direction": "DOWN",
           "gate_fn": "TUBES-ENTER-F",
+          "gate_ref": "tube_access",
           "target": "TUBE-JUNCTION",
-          "type": "gated",
-          "gate_ref": "tube_access"
+          "type": "gated"
         },
         {
           "aliases": [
@@ -6907,60 +7418,60 @@
           "gate_fn": "FOODVILLE-ENTER-F",
           "rules": [
             {
+              "message": "According to a note on the door, the Foodville is only open from 11:30am until 4:00 in the afternoon.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     700,
                     960
                   ]
-                }
-              },
-              "then": "block",
-              "message": "According to a note on the door, the Foodville is only open from 11:30am until 4:00 in the afternoon."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2061
+                    2071
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Foodville isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1140
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Foodville isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2041,
-                    2051
+                    2061
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Foodville isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     480,
                     1320
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041,
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Foodville isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "FOODVILLE-1",
@@ -7000,44 +7511,44 @@
           "gate_fn": "ROCKVIL-MALL-ENTER-F",
           "rules": [
             {
+              "message": "The Mall isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     720,
                     1080
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2071
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Mall isn't open yet."
+              }
             },
             {
+              "message": "The Mall isn't open yet.",
+              "then": "block",
               "when": {
+                "stime": {
+                  "outside": [
+                    480,
+                    1320
+                  ]
+                },
                 "syear": {
                   "eq": [
                     2041,
                     2051,
                     2061
                   ]
-                },
-                "stime": {
-                  "outside": [
-                    480,
-                    1320
-                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Mall isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "ROCKVIL-MALL",
@@ -7117,76 +7628,76 @@
           "gate_fn": "AQUARIUM-ENTER-F",
           "rules": [
             {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     720,
                     1020
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2061
+                    2071
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     660,
                     1080
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2041
+                    2061
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1320
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2051
+                    2041
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Aquarium isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1200
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Aquarium isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "AQUARIUM",
@@ -7197,19 +7708,19 @@
           "gate_fn": "HALLEY-PARK-EAST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-EAST",
@@ -7220,19 +7731,19 @@
           "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-WEST",
@@ -7312,19 +7823,19 @@
           "gate_fn": "SYMPHONY-HALL-ENTER-F",
           "rules": [
             {
+              "message": "Symphony Hall has been closed for several years now.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "Symphony Hall has been closed for several years now."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "SYMPHONY-HALL",
@@ -7335,19 +7846,19 @@
           "gate_fn": "RIVERSIDE-PARK-ENTER-F",
           "rules": [
             {
+              "message": "A guard stops you and informs you that admission to the park is restricted.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A guard stops you and informs you that admission to the park is restricted."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "RIVERSIDE-PARK",
@@ -7363,16 +7874,18 @@
           "gate_fn": "CINEMA-ENTER-F",
           "rules": [
             {
+              "then": "allow",
               "when": {
                 "syear": {
                   "eq": [
                     2041
                   ]
                 }
-              },
-              "then": "allow"
+              }
             },
             {
+              "message": "The movie theatre is closed at this hour, of course.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -7380,13 +7893,11 @@
                     1200
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The movie theatre is closed at this hour, of course."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CINEMA",
@@ -7428,19 +7939,19 @@
           "gate_fn": "SYMPHONY-HALL-ENTER-F",
           "rules": [
             {
+              "message": "Symphony Hall has been closed for several years now.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "Symphony Hall has been closed for several years now."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "SYMPHONY-HALL",
@@ -7451,16 +7962,18 @@
           "gate_fn": "CINEMA-ENTER-F",
           "rules": [
             {
+              "then": "allow",
               "when": {
                 "syear": {
                   "eq": [
                     2041
                   ]
                 }
-              },
-              "then": "allow"
+              }
             },
             {
+              "message": "The movie theatre is closed at this hour, of course.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -7468,13 +7981,11 @@
                     1200
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The movie theatre is closed at this hour, of course."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CINEMA",
@@ -7510,7 +8021,32 @@
       "desc": "(undefined)",
       "desc_variants": null,
       "description": null,
-      "edges": [],
+      "edges": [
+        {
+          "direction": "mode_library",
+          "gate_ref": "mode_standard",
+          "target": "LIBRARY-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_comm",
+          "gate_ref": "mode_comm",
+          "target": "COMM-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_interface",
+          "gate_ref": "mode_standard",
+          "target": "INTERFACE-ROOM",
+          "type": "gated"
+        },
+        {
+          "direction": "mode_simulation",
+          "gate_ref": "mode_simulation",
+          "target": "SIMULATION-ROOM",
+          "type": "gated"
+        }
+      ],
       "flags": [],
       "globals": [],
       "objects": [],
@@ -7596,19 +8132,19 @@
           "gate_fn": "CONSTRUCTION-SITE-1-ENTER-F",
           "rules": [
             {
+              "message": "A security guard escorts you away from the building.",
+              "then": "block",
               "when": {
                 "syear": {
                   "neq": [
                     2041
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A security guard escorts you away from the building."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CONSTRUCTION-SITE-1",
@@ -7664,60 +8200,60 @@
           "gate_fn": "FOODVILLE-ENTER-F",
           "rules": [
             {
+              "message": "According to a note on the door, the Foodville is only open from 11:30am until 4:00 in the afternoon.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     700,
                     960
                   ]
-                }
-              },
-              "then": "block",
-              "message": "According to a note on the door, the Foodville is only open from 11:30am until 4:00 in the afternoon."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2061
+                    2071
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Foodville isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1140
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The Foodville isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2041,
-                    2051
+                    2061
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The Foodville isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     480,
                     1320
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041,
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The Foodville isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "FOODVILLE-1",
@@ -7738,60 +8274,60 @@
           "gate_fn": "MAIN-LIBRARY-ENTER-F",
           "rules": [
             {
+              "message": "The library isn't open yet.",
+              "then": "block",
               "when": {
-                "syear": {
-                  "eq": [
-                    2071
-                  ]
-                },
                 "stime": {
                   "outside": [
                     750,
                     990
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The library isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2061
+                    2071
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The library isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     600,
                     1260
                   ]
-                }
-              },
-              "then": "block",
-              "message": "The library isn't open yet."
-            },
-            {
-              "when": {
+                },
                 "syear": {
                   "eq": [
-                    2041,
-                    2051
+                    2061
                   ]
-                },
+                }
+              }
+            },
+            {
+              "message": "The library isn't open yet.",
+              "then": "block",
+              "when": {
                 "stime": {
                   "outside": [
                     510,
                     1320
                   ]
+                },
+                "syear": {
+                  "eq": [
+                    2041,
+                    2051
+                  ]
                 }
-              },
-              "then": "block",
-              "message": "The library isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "MAIN-LIBRARY",
@@ -7903,23 +8439,23 @@
           "gate_fn": "SUBURBS-ENTER-F",
           "rules": [
             {
+              "message": "The collapsed highway blocks the road.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The collapsed highway blocks the road."
+              }
             },
             {
-              "when": {},
+              "message": "WARNING: You have reached the boundary of this simulation.",
               "then": "block",
-              "message": "WARNING: You have reached the boundary of this simulation."
+              "when": {}
             }
           ],
-          "target": null,
+          "target": "SOUTHWAY-UNDERPASS",
           "type": "gated"
         },
         {
@@ -8153,19 +8689,19 @@
           "gate_fn": "SYMPHONY-HALL-ENTER-F",
           "rules": [
             {
+              "message": "Symphony Hall has been closed for several years now.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "Symphony Hall has been closed for several years now."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "SYMPHONY-HALL",
@@ -8220,19 +8756,19 @@
           "gate_fn": "RIVERSIDE-PARK-ENTER-F",
           "rules": [
             {
+              "message": "A guard stops you and informs you that admission to the park is restricted.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "A guard stops you and informs you that admission to the park is restricted."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "RIVERSIDE-PARK",
@@ -8375,9 +8911,9 @@
         {
           "direction": "DOWN",
           "gate_fn": "TUBES-ENTER-F",
+          "gate_ref": "tube_access",
           "target": "TUBE-AT-AIRPORT",
-          "type": "gated",
-          "gate_ref": "tube_access"
+          "type": "gated"
         }
       ],
       "flags": [
@@ -8474,14 +9010,21 @@
           "type": "open"
         },
         {
-          "aliases": [
-            "NW",
-            "IN"
-          ],
-          "direction": "SE",
-          "gate_fn": "BROWN-TUBECAR-ENTER-F",
-          "rules": [],
-          "target": null,
+          "direction": "tube_bodanski",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-BODANSKI",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_junction",
+          "gate_ref": "tube_access",
+          "target": "TUBE-JUNCTION",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_university",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-UNIVERSITY",
           "type": "gated"
         }
       ],
@@ -8519,14 +9062,21 @@
           "type": "open"
         },
         {
-          "aliases": [
-            "NW",
-            "IN"
-          ],
-          "direction": "SE",
-          "gate_fn": "BROWN-TUBECAR-ENTER-F",
-          "rules": [],
-          "target": null,
+          "direction": "tube_airport",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-AIRPORT",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_junction",
+          "gate_ref": "tube_access",
+          "target": "TUBE-JUNCTION",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_university",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-UNIVERSITY",
           "type": "gated"
         }
       ],
@@ -8556,22 +9106,35 @@
       "edges": [
         {
           "aliases": [
-            "NE",
-            "SW"
-          ],
-          "direction": "IN",
-          "gate_fn": "RED-TUBECAR-ENTER-F",
-          "rules": [],
-          "target": null,
-          "type": "gated"
-        },
-        {
-          "aliases": [
             "OUT"
           ],
           "direction": "UP",
           "target": "WICKER-AND-RIVER",
           "type": "open"
+        },
+        {
+          "direction": "tube_stadium",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-STADIUM",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_park",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-PARK",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_junction",
+          "gate_ref": "tube_access",
+          "target": "TUBE-JUNCTION",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_heiman",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-HEIMAN",
+          "type": "gated"
         }
       ],
       "flags": [
@@ -8600,22 +9163,35 @@
       "edges": [
         {
           "aliases": [
-            "NE",
-            "SW"
-          ],
-          "direction": "IN",
-          "gate_fn": "RED-TUBECAR-ENTER-F",
-          "rules": [],
-          "target": null,
-          "type": "gated"
-        },
-        {
-          "aliases": [
             "OUT"
           ],
           "direction": "UP",
           "target": "ELM-AND-RIVER",
           "type": "open"
+        },
+        {
+          "direction": "tube_stadium",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-STADIUM",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_park",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-PARK",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_junction",
+          "gate_ref": "tube_access",
+          "target": "TUBE-JUNCTION",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_factory",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-FACTORY",
+          "type": "gated"
         }
       ],
       "flags": [
@@ -8644,22 +9220,35 @@
       "edges": [
         {
           "aliases": [
-            "NE",
-            "SW"
-          ],
-          "direction": "IN",
-          "gate_fn": "RED-TUBECAR-ENTER-F",
-          "rules": [],
-          "target": null,
-          "type": "gated"
-        },
-        {
-          "aliases": [
             "OUT"
           ],
           "direction": "UP",
           "target": "HALLEY-PARK-WEST",
           "type": "open"
+        },
+        {
+          "direction": "tube_stadium",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-STADIUM",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_junction",
+          "gate_ref": "tube_access",
+          "target": "TUBE-JUNCTION",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_heiman",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-HEIMAN",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_factory",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-FACTORY",
+          "type": "gated"
         }
       ],
       "flags": [
@@ -8688,22 +9277,35 @@
       "edges": [
         {
           "aliases": [
-            "NE",
-            "SW"
-          ],
-          "direction": "IN",
-          "gate_fn": "RED-TUBECAR-ENTER-F",
-          "rules": [],
-          "target": null,
-          "type": "gated"
-        },
-        {
-          "aliases": [
             "OUT"
           ],
           "direction": "UP",
           "target": "ROCKVIL-STADIUM",
           "type": "open"
+        },
+        {
+          "direction": "tube_park",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-PARK",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_junction",
+          "gate_ref": "tube_access",
+          "target": "TUBE-JUNCTION",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_heiman",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-HEIMAN",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_factory",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-FACTORY",
+          "type": "gated"
         }
       ],
       "flags": [
@@ -8740,14 +9342,21 @@
           "type": "open"
         },
         {
-          "aliases": [
-            "NW",
-            "IN"
-          ],
-          "direction": "SE",
-          "gate_fn": "BROWN-TUBECAR-ENTER-F",
-          "rules": [],
-          "target": null,
+          "direction": "tube_airport",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-AIRPORT",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_bodanski",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-BODANSKI",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_junction",
+          "gate_ref": "tube_access",
+          "target": "TUBE-JUNCTION",
           "type": "gated"
         }
       ],
@@ -8784,30 +9393,45 @@
           "type": "open"
         },
         {
-          "direction": "IN",
-          "gate_fn": "TUBECAR-AT-JUNCTION-ENTER-F",
-          "rules": [],
-          "target": null,
+          "direction": "tube_stadium",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-STADIUM",
           "type": "gated"
         },
         {
-          "aliases": [
-            "SW"
-          ],
-          "direction": "NE",
-          "gate_fn": "RED-TUBECAR-ENTER-F",
-          "rules": [],
-          "target": null,
+          "direction": "tube_park",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-PARK",
           "type": "gated"
         },
         {
-          "aliases": [
-            "SE"
-          ],
-          "direction": "NW",
-          "gate_fn": "BROWN-TUBECAR-ENTER-F",
-          "rules": [],
-          "target": null,
+          "direction": "tube_heiman",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-HEIMAN",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_factory",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-FACTORY",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_airport",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-AIRPORT",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_bodanski",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-BODANSKI",
+          "type": "gated"
+        },
+        {
+          "direction": "tube_university",
+          "gate_ref": "tube_access",
+          "target": "TUBE-AT-UNIVERSITY",
           "type": "gated"
         }
       ],
@@ -8844,12 +9468,12 @@
           "gate_fn": "INNER-LOBBY-ENTER-F",
           "rules": [
             {
-              "when": {},
+              "message": "The door to the inner lobby is locked.",
               "then": "block",
-              "message": "The door to the inner lobby is locked."
+              "when": {}
             }
           ],
-          "target": null,
+          "target": "UNIVERSITY-HEIGHTS",
           "type": "gated"
         },
         {
@@ -9059,17 +9683,19 @@
           "gate_fn": "BOOKSTORE-ENTER-F",
           "rules": [
             {
+              "message": "The bookstore is locked. Through the grimy window, the bookstore looks empty and barren.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The bookstore is locked. Through the grimy window, the bookstore looks empty and barren."
+              }
             },
             {
+              "message": "The bookstore isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "outside": [
@@ -9077,13 +9703,11 @@
                     1083
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The bookstore isn't open yet."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "BOOKSTORE",
@@ -9099,26 +9723,26 @@
           "gate_fn": "LIQUOR-STORE-ENTER-F",
           "rules": [
             {
+              "message": "The liquor store isn't open yet.",
+              "then": "block",
               "when": {
                 "stime": {
                   "lt": 660
                 }
-              },
-              "then": "block",
-              "message": "The liquor store isn't open yet."
+              }
             },
             {
+              "message": "The liquor store seems to be closed for the night.",
+              "then": "block",
               "when": {
                 "stime": {
                   "gt": 1320
                 }
-              },
-              "then": "block",
-              "message": "The liquor store seems to be closed for the night."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "LIQUOR-STORE",
@@ -9168,6 +9792,8 @@
           "gate_fn": "CLOSED-FACTORY-ENTER-F",
           "rules": [
             {
+              "message": "The soup kitchen is closed down.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
@@ -9175,13 +9801,11 @@
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The soup kitchen is closed down."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "CLOSED-FACTORY",
@@ -9220,9 +9844,9 @@
         {
           "direction": "DOWN",
           "gate_fn": "TUBES-ENTER-F",
+          "gate_ref": "tube_access",
           "target": "TUBE-AT-FACTORY",
-          "type": "gated",
-          "gate_ref": "tube_access"
+          "type": "gated"
         }
       ],
       "flags": [
@@ -9273,19 +9897,19 @@
           "gate_fn": "HALLEY-PARK-WEST-ENTER-F",
           "rules": [
             {
+              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls.",
+              "then": "block",
               "when": {
                 "syear": {
                   "eq": [
                     2071
                   ]
                 }
-              },
-              "then": "block",
-              "message": "The gates of the estate are all locked; you'd be shot on sight if found within the walls."
+              }
             },
             {
-              "when": {},
-              "then": "allow"
+              "then": "allow",
+              "when": {}
             }
           ],
           "target": "HALLEY-PARK-WEST",
