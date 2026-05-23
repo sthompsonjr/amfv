@@ -1,0 +1,3050 @@
+{
+  "state_defs": {
+    "time": {
+      "type": "int",
+      "init": 1147,
+      "scope": "facility",
+      "category": "clock"
+    },
+    "month": {
+      "type": "int",
+      "init": 3,
+      "scope": "facility",
+      "category": "clock"
+    },
+    "date": {
+      "type": "int",
+      "init": 16,
+      "scope": "facility",
+      "category": "clock"
+    },
+    "elapsed_time": {
+      "type": "int",
+      "init": 1,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "next_sleep_time": {
+      "type": "int",
+      "init": 720,
+      "scope": "facility",
+      "category": "clock"
+    },
+    "next_sleep_date": {
+      "type": "int",
+      "init": 16,
+      "scope": "facility",
+      "category": "clock"
+    },
+    "last_abe_time": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "clock"
+    },
+    "syear": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "smonth": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "sdate": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "stime": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "completed_tasks": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "progression"
+    },
+    "simulating": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "progression"
+    },
+    "short_first_simulation": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "progression"
+    },
+    "part_flag": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "progression"
+    },
+    "sim_level_table": {
+      "type": "array",
+      "init": [
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scope": "facility",
+      "category": "progression"
+    },
+    "mode": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "chapter"
+    },
+    "2051_score": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "scoring",
+      "note": "Simplifiable: Accumulated observation score for year 2051"
+    },
+    "2061_score": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "scoring",
+      "note": "Simplifiable: Accumulated observation score for year 2061"
+    },
+    "2071_score": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "scoring",
+      "note": "Simplifiable: Accumulated observation score for year 2071"
+    },
+    "2081_score": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "scoring",
+      "note": "Simplifiable: Accumulated observation score for year 2081"
+    },
+    "2051_recorded": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "scoring"
+    },
+    "2061_recorded": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "scoring"
+    },
+    "2071_recorded": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "scoring"
+    },
+    "2081_recorded": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "scoring"
+    },
+    "recordings_include_simulation": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "scoring"
+    },
+    "recording": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "scoring",
+      "note": "True when player has activated RECORD. Gates all scoring."
+    },
+    "red_tubecar_in_station": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "brown_tubecar_in_station": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "red_pointer": {
+      "type": "int",
+      "init": 2,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "brown_pointer": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "red_northbound": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "brown_northbound": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "clock"
+    },
+    "jill_not_spoken_yet": {
+      "type": "bool",
+      "init": true,
+      "scope": "simulation",
+      "category": "npc"
+    },
+    "jill_counter": {
+      "type": "int",
+      "init": -1,
+      "scope": "simulation",
+      "category": "npc"
+    },
+    "mitchell_counter": {
+      "type": "int",
+      "init": -1,
+      "scope": "simulation",
+      "category": "npc"
+    },
+    "apartment_raid_flag": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "npc"
+    },
+    "mitchell_news_flag": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "npc"
+    },
+    "raid_prob": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "npc",
+      "note": "Simplifiable: Probability factor for apartment raid trigger"
+    },
+    "mitchell_raid_flag": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "npc"
+    },
+    "grimwold_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "npc"
+    },
+    "ryder_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "npc"
+    },
+    "ryder_recorded": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "npc"
+    },
+    "perelman_noticed": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "npc"
+    },
+    "waiter_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "npc",
+      "note": "Simplifiable: Timer controlling waiter NPC behavior at restaurant"
+    },
+    "maitre_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "npc",
+      "note": "Simplifiable: Timer controlling maitre d' NPC behavior"
+    },
+    "skycab_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "npc",
+      "note": "Simplifiable: Timer controlling skycab arrival scheduling"
+    },
+    "light_level": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "last_sun_time": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "credit": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "bruised": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "mugged": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "hunger_warning": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "wild_dog_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "meal_status": {
+      "type": "int",
+      "init": 0,
+      "scope": "simulation",
+      "category": "environment",
+      "note": "Simplifiable: Current stage of restaurant visit (0=none, 1-3=stages)"
+    },
+    "seige": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "environment"
+    },
+    "siege": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "environment"
+    },
+    "air_conditioning_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "environment"
+    },
+    "suffocate_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "environment"
+    },
+    "sabotage_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "environment"
+    },
+    "lose_counter": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "environment"
+    },
+    "dorm_raid_flag": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "joybooth_used": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "zoo_flag": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "environment",
+      "note": "Simplifiable: Whether zoo torturing event has been triggered"
+    },
+    "stoning_flag": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "environment"
+    },
+    "current_directory": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "prism_mode"
+    },
+    "current_file": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "prism_mode"
+    },
+    "highlight_cnt": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "prism_mode"
+    },
+    "directory_cnt": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "prism_mode",
+      "note": "Simplifiable: Saved directory cursor position for navigation"
+    },
+    "number_of_messages": {
+      "type": "int",
+      "init": 0,
+      "scope": "facility",
+      "category": "prism_mode"
+    },
+    "feed_buffer": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "prism_mode"
+    },
+    "interface_change": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "prism_mode"
+    },
+    "interface_warning": {
+      "type": "bool",
+      "init": false,
+      "scope": "facility",
+      "category": "prism_mode"
+    },
+    "reviewing_recordings": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "prism_mode",
+      "note": "Simplifiable: Whether player is in recording review mode"
+    },
+    "apartment_door_openbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "elevator_openbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag",
+      "note": "Simplifiable: Whether elevator doors are open"
+    },
+    "baby_held": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "beer_held": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "credit_card_held": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "souvenir_touchbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag",
+      "note": "Simplifiable: Whether player has examined the souvenir"
+    },
+    "water_touchbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "pamphlet_touchbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "newspaper_touchbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "joybooth_button_touchbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "banned_titles_list_touchbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "anderson_directory_touchbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag",
+      "note": "Simplifiable: Whether Anderson directory has been read"
+    },
+    "roy_touchbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag",
+      "note": "Simplifiable: Whether Roy has been spoken to"
+    },
+    "bordello_ad_touchbit": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "object_flag"
+    },
+    "scores_fired": {
+      "type": "array",
+      "init": [],
+      "scope": "global",
+      "category": "scoring",
+      "note": "Set of score indices already triggered. Persists across all sim sessions. Enforces zero-on-score mechanic."
+    },
+    "jailed": {
+      "type": "bool",
+      "init": false,
+      "scope": "simulation",
+      "category": "environment",
+      "note": "True while player is in jail cell."
+    }
+  },
+  "year_init": {
+    "2041": {
+      "start_room": "KENNEDY-PARK",
+      "state_overrides": {
+        "credit": 600
+      },
+      "objects": [
+        {
+          "id": "WALLET",
+          "location": "PLAYER"
+        },
+        {
+          "id": "CREDIT-CARD",
+          "location": "WALLET"
+        },
+        {
+          "id": "DRIVERS-LICENSE",
+          "location": "WALLET"
+        },
+        {
+          "id": "KEY",
+          "location": "PLAYER"
+        },
+        {
+          "id": "CRIB",
+          "location": "BEDROOM"
+        },
+        {
+          "id": "FORMULA",
+          "location": "REFRIGERATOR"
+        },
+        {
+          "id": "SOUVENIR",
+          "location": "TRAIN-STATION"
+        },
+        {
+          "id": "NEWSPAPER-DISPENSER",
+          "location": "BODANSKI-SQUARE"
+        },
+        {
+          "id": "NEWSPAPER",
+          "location": "BODANSKI-SQUARE"
+        },
+        {
+          "id": "GOVERNMENT-OFFICIAL",
+          "location": "CITY-HALL"
+        },
+        {
+          "id": "OFFICIAL-SNACK",
+          "location": "CITY-HALL"
+        },
+        {
+          "id": "FIRETRUCK",
+          "location": "FIREHOUSE"
+        },
+        {
+          "id": "ANDERSON-DIRECTORY",
+          "location": "HEALTH-CENTER"
+        },
+        {
+          "id": "WATERPOOL",
+          "location": "KENNEDY-PARK"
+        },
+        {
+          "id": "STATUE",
+          "location": "KENNEDY-PARK"
+        },
+        {
+          "id": "PLAQUE",
+          "location": "KENNEDY-PARK"
+        },
+        {
+          "id": "FOUNTAIN",
+          "location": "CHURCH-STREET-PARK"
+        },
+        {
+          "id": "SODA",
+          "location": "REFRIGERATOR"
+        },
+        {
+          "id": "TURKEY-SANDWICH",
+          "location": "REFRIGERATOR"
+        },
+        {
+          "id": "HAM-SANDWICH",
+          "location": "REFRIGERATOR"
+        },
+        {
+          "id": "TURTLE",
+          "location": "AQUARIUM"
+        },
+        {
+          "id": "MANTA-RAY",
+          "location": "AQUARIUM"
+        },
+        {
+          "id": "DUCKS",
+          "location": "HALLEY-PARK-WEST"
+        }
+      ],
+      "room_flags": [
+        {
+          "room": "CHURCH-STREET-PARK",
+          "set": [
+            "OUTSIDEBIT",
+            "PARKBIT"
+          ]
+        }
+      ],
+      "interrupts_queue": [
+        {
+          "id": "i_sunrise_sunset",
+          "ticks": -1
+        },
+        {
+          "id": "i_city_noises",
+          "ticks": 2
+        }
+      ]
+    },
+    "2051": {
+      "start_room": "TUBE-AT-UNIVERSITY",
+      "state_overrides": {
+        "credit": 500
+      },
+      "objects": [
+        {
+          "id": "WALLET",
+          "location": "PLAYER"
+        },
+        {
+          "id": "CREDIT-CARD",
+          "location": "WALLET"
+        },
+        {
+          "id": "DRIVERS-LICENSE",
+          "location": "WALLET"
+        },
+        {
+          "id": "KEY",
+          "location": "PLAYER"
+        },
+        {
+          "id": "PARTITION",
+          "location": "LIVING-ROOM"
+        },
+        {
+          "id": "APPLE",
+          "location": "REFRIGERATOR"
+        },
+        {
+          "id": "GRANOLA-CLUSTER",
+          "location": "REFRIGERATOR"
+        },
+        {
+          "id": "GOVERNMENT-OFFICIAL",
+          "location": "CITY-HALL"
+        },
+        {
+          "id": "OFFICIAL-SNACK",
+          "location": "CITY-HALL"
+        },
+        {
+          "id": "PAMPHLET",
+          "location": "TRAIN-STATION"
+        },
+        {
+          "id": "NEWSPAPER-DISPENSER",
+          "location": "BODANSKI-SQUARE"
+        },
+        {
+          "id": "NEWSPAPER",
+          "location": "BODANSKI-SQUARE"
+        },
+        {
+          "id": "WATERPOOL",
+          "location": "KENNEDY-PARK"
+        },
+        {
+          "id": "STATUE",
+          "location": "KENNEDY-PARK"
+        },
+        {
+          "id": "PLAQUE",
+          "location": "KENNEDY-PARK"
+        },
+        {
+          "id": "FOUNTAIN",
+          "location": "CHURCH-STREET-PARK"
+        },
+        {
+          "id": "DUCKS",
+          "location": "HALLEY-PARK-WEST"
+        },
+        {
+          "id": "FIRETRUCK",
+          "location": "FIREHOUSE"
+        },
+        {
+          "id": "STEW",
+          "location": "CLOSED-FACTORY"
+        },
+        {
+          "id": "ANDERSON-DIRECTORY",
+          "location": "HEALTH-CENTER"
+        }
+      ],
+      "room_flags": [
+        {
+          "room": "CHURCH-STREET-PARK",
+          "set": [
+            "OUTSIDEBIT",
+            "PARKBIT"
+          ]
+        }
+      ],
+      "interrupts_queue": [
+        {
+          "id": "i_sunrise_sunset",
+          "ticks": -1
+        },
+        {
+          "id": "i_city_noises",
+          "ticks": 2
+        },
+        {
+          "id": "i_curfew",
+          "ticks": -1
+        }
+      ]
+    },
+    "2061": {
+      "start_room": "SOUTHWAY-AND-RIVER",
+      "state_overrides": {
+        "credit": 200
+      },
+      "objects": [
+        {
+          "id": "WALLET",
+          "location": "PLAYER"
+        },
+        {
+          "id": "CREDIT-CARD",
+          "location": "WALLET"
+        },
+        {
+          "id": "DRIVERS-LICENSE",
+          "location": "WALLET"
+        },
+        {
+          "id": "KEY",
+          "location": "PLAYER"
+        },
+        {
+          "id": "PARTITION",
+          "location": "LIVING-ROOM"
+        },
+        {
+          "id": "PAMPHLET",
+          "location": "TRAIN-STATION"
+        },
+        {
+          "id": "FIRETRUCK",
+          "location": "FIREHOUSE"
+        },
+        {
+          "id": "ANDERSON-DIRECTORY",
+          "location": "HEALTH-CENTER"
+        }
+      ],
+      "room_flags": [
+        {
+          "room": "WAREHOUSE-1",
+          "set": [
+            "OUTSIDEBIT"
+          ]
+        }
+      ],
+      "interrupts_queue": [
+        {
+          "id": "i_sunrise_sunset",
+          "ticks": -1
+        },
+        {
+          "id": "i_city_noises",
+          "ticks": 2
+        },
+        {
+          "id": "i_curfew",
+          "ticks": -1
+        },
+        {
+          "id": "i_apartment",
+          "ticks": 40
+        }
+      ]
+    },
+    "2071": {
+      "start_room": "BODANSKI-SQUARE",
+      "state_overrides": {
+        "credit": 100
+      },
+      "objects": [
+        {
+          "id": "WALLET",
+          "location": "PLAYER"
+        },
+        {
+          "id": "CREDIT-CARD",
+          "location": "WALLET"
+        },
+        {
+          "id": "RATION-CARD",
+          "location": "WALLET"
+        },
+        {
+          "id": "KEY",
+          "location": "PLAYER"
+        },
+        {
+          "id": "PAMPHLET",
+          "location": "TRAIN-STATION"
+        },
+        {
+          "id": "JOYBOOTH-BUTTON",
+          "location": "JOYBOOTH"
+        },
+        {
+          "id": "ROY",
+          "location": "ELM-UNDERPASS"
+        },
+        {
+          "id": "BANNED-TITLES-LIST",
+          "location": "MAIN-LIBRARY"
+        },
+        {
+          "id": "BANNER",
+          "location": "ZOO"
+        },
+        {
+          "id": "STONES",
+          "location": "ATHLETIC-FIELD"
+        }
+      ],
+      "room_flags": [
+        {
+          "room": "WAREHOUSE-1",
+          "set": [
+            "OUTSIDEBIT"
+          ]
+        },
+        {
+          "room": "ST-MICHAELS",
+          "set": [
+            "OUTSIDEBIT"
+          ]
+        },
+        {
+          "room": "FIRST-METHODIST-CHURCH",
+          "set": [
+            "OUTSIDEBIT"
+          ]
+        }
+      ],
+      "interrupts_queue": [
+        {
+          "id": "i_sunrise_sunset",
+          "ticks": -1
+        },
+        {
+          "id": "i_city_noises",
+          "ticks": 2
+        },
+        {
+          "id": "i_curfew",
+          "ticks": -1
+        },
+        {
+          "id": "i_apartment",
+          "ticks": 40
+        },
+        {
+          "id": "i_mug",
+          "ticks": 7
+        }
+      ]
+    },
+    "2081": {
+      "start_room": "MAIN-AND-WICKER",
+      "state_overrides": {
+        "credit": 0
+      },
+      "objects": [
+        {
+          "id": "SACK",
+          "location": "MAIN-STREET-BRIDGE"
+        },
+        {
+          "id": "MOLD",
+          "location": "FOODVILLE-2"
+        },
+        {
+          "id": "TIMBERS",
+          "location": "THE-COACHMAN"
+        }
+      ],
+      "room_flags": [],
+      "interrupts_queue": [
+        {
+          "id": "i_sunrise_sunset",
+          "ticks": -1
+        },
+        {
+          "id": "i_city_noises",
+          "ticks": 2
+        },
+        {
+          "id": "i_hunger",
+          "ticks": 65
+        },
+        {
+          "id": "i_wild_dogs",
+          "ticks": -1
+        }
+      ]
+    },
+    "2091": {
+      "start_room": "SOLARIUM",
+      "state_overrides": {},
+      "objects": [
+        {
+          "id": "JILL",
+          "location": "MASTER-BEDROOM"
+        },
+        {
+          "id": "NEWSPAPER",
+          "location": "EPILOGUE-LIVING-ROOM"
+        },
+        {
+          "id": "REFRIGERATOR",
+          "location": "EPILOGUE-KITCHEN"
+        },
+        {
+          "id": "APARTMENT-DOOR",
+          "location": "FOYER"
+        },
+        {
+          "id": "BED",
+          "location": "MASTER-BEDROOM"
+        },
+        {
+          "id": "CHAIR",
+          "location": "DINING-ROOM"
+        },
+        {
+          "id": "COUNTER",
+          "location": "EPILOGUE-KITCHEN"
+        },
+        {
+          "id": "TOILET",
+          "location": "EPILOGUE-BATHROOM"
+        }
+      ],
+      "room_flags": [],
+      "interrupts_queue": [
+        {
+          "id": "i_skycab",
+          "ticks": 18
+        }
+      ],
+      "note": "Epilogue. Triggered by PART-FLAG=4, not player-selectable."
+    }
+  },
+  "interrupts": {
+    "_note": "Populated in Sessions 14-15. See simulation_tree_schema.md Section 3 for schema."
+  },
+  "scores": [
+    {
+      "index": 0,
+      "points": 2,
+      "desc": "Vandalized apartment lobbies",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "DESCRIBE-APARTMENT-VESTIBULE",
+      "rooms": null
+    },
+    {
+      "index": 1,
+      "points": 1,
+      "desc": "Water tastes rusty",
+      "trigger": "object_examine",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "WATER-F",
+      "object": "WATER"
+    },
+    {
+      "index": 2,
+      "points": 2,
+      "desc": "Hot water off as usual",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "APARTMENT-BATHROOM-F",
+      "rooms": [
+        "APARTMENT-BATHROOM"
+      ],
+      "rooms_unverified": true,
+      "alt_routines": [
+        "APARTMENT-HOT-WATER-PANEL-F"
+      ]
+    },
+    {
+      "index": 3,
+      "points": 1,
+      "desc": "Elevators off as usual",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "ELEVATOR-LOBBY-F",
+      "rooms": [
+        "ELEVATOR-LOBBY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 4,
+      "points": 2,
+      "desc": "Window glass is etched with pollution",
+      "trigger": "object_examine",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "APARTMENT-WINDOW-F",
+      "object": "APARTMENT-WINDOW"
+    },
+    {
+      "index": 5,
+      "points": 3,
+      "desc": "Window view: dying forests",
+      "trigger": "object_examine",
+      "years": [
+        2051
+      ],
+      "source_routine": "APARTMENT-WINDOW-F",
+      "object": "APARTMENT-WINDOW"
+    },
+    {
+      "index": 6,
+      "points": 5,
+      "desc": "Window view: strip mining",
+      "trigger": "object_examine",
+      "years": [
+        2061
+      ],
+      "source_routine": "APARTMENT-WINDOW-F",
+      "object": "APARTMENT-WINDOW"
+    },
+    {
+      "index": 7,
+      "points": 7,
+      "desc": "Window view: serf village",
+      "trigger": "object_examine",
+      "years": [
+        2071
+      ],
+      "source_routine": "APARTMENT-WINDOW-F",
+      "object": "APARTMENT-WINDOW"
+    },
+    {
+      "index": 8,
+      "points": 3,
+      "desc": "Apartment raid",
+      "trigger": "event",
+      "years": [
+        2051
+      ],
+      "source_routine": "I-APARTMENT",
+      "interrupt": "i_apartment"
+    },
+    {
+      "index": 9,
+      "points": 4,
+      "desc": "Apartment raid",
+      "trigger": "event",
+      "years": [
+        2061
+      ],
+      "source_routine": "I-APARTMENT",
+      "interrupt": "i_apartment"
+    },
+    {
+      "index": 10,
+      "points": 5,
+      "desc": "Apartment raid",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-APARTMENT",
+      "interrupt": "i_apartment"
+    },
+    {
+      "index": 11,
+      "points": 1,
+      "desc": "City Hall is crumbling",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "ROCKVILLE-CENTRE-F",
+      "rooms": [
+        "ROCKVILLE-CENTRE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 12,
+      "points": 2,
+      "desc": "Skybus system shut down",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "SKYBUS-TERMINAL-F",
+      "rooms": [
+        "SKYBUS-TERMINAL"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 13,
+      "points": 2,
+      "desc": "Kennedy Park is a construction site",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "KENNEDY-PARK-F",
+      "rooms": [
+        "KENNEDY-PARK"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 14,
+      "points": 2,
+      "desc": "Death penalty for attempted rape",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "COURTHOUSE-F",
+      "rooms": [
+        "COURTHOUSE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 15,
+      "points": 5,
+      "desc": "Life sentence for Morality Violation",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "COURTHOUSE-F",
+      "rooms": [
+        "COURTHOUSE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 16,
+      "points": 8,
+      "desc": "Execution for cheating on food allowance",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "COURTHOUSE-F",
+      "rooms": [
+        "COURTHOUSE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 17,
+      "points": 10,
+      "desc": "Executed for food ration violation",
+      "trigger": "death",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-APARTMENT",
+      "interrupt": "i_apartment"
+    },
+    {
+      "index": 18,
+      "points": 1,
+      "desc": "Foodvilles sparsely stocked",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "FOODVILLE-F",
+      "rooms": [
+        "FOODVILLE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 19,
+      "points": 4,
+      "desc": "Food rationing in effect",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "FOODVILLE-F",
+      "rooms": [
+        "FOODVILLE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 20,
+      "points": 2,
+      "desc": "Roy's Bar defaced",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "ROYS-F",
+      "rooms": [
+        "ROYS"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 21,
+      "points": 5,
+      "desc": "Killed by squatters in Dorm",
+      "trigger": "death",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-DORM",
+      "interrupt": "i_dorm"
+    },
+    {
+      "index": 23,
+      "points": 1,
+      "desc": "Dorm raid",
+      "trigger": "event",
+      "years": [
+        2051
+      ],
+      "source_routine": "I-DORM",
+      "interrupt": "i_dorm"
+    },
+    {
+      "index": 24,
+      "points": 1,
+      "desc": "Hospital caters to the wealthy",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "HEALTH-CENTER-F",
+      "rooms": [
+        "HEALTH-CENTER"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 25,
+      "points": 3,
+      "desc": "Hospital refuses to admit dying patient",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "HEALTH-CENTER-F",
+      "rooms": [
+        "HEALTH-CENTER"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 26,
+      "points": 3,
+      "desc": "Heiman World building fire",
+      "trigger": "event",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "I-HEIMAN",
+      "interrupt": "i_heiman"
+    },
+    {
+      "index": 27,
+      "points": 7,
+      "desc": "Police shoot old woman in alley",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-ALLEY",
+      "interrupt": "i_alley"
+    },
+    {
+      "index": 28,
+      "points": 1,
+      "desc": "Indoor Cities are run down",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "INDOOR-CITY-F",
+      "rooms": [
+        "INDOOR-CITY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 29,
+      "points": 3,
+      "desc": "Indoor Cities are slums",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "INDOOR-CITY-F",
+      "rooms": [
+        "INDOOR-CITY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 30,
+      "points": 1,
+      "desc": "Joybooths banned",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "JOYBOOTH-F",
+      "rooms": [
+        "JOYBOOTH"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 31,
+      "points": 3,
+      "desc": "Joybooth used as brainwashing tool",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-JOYBOOTH",
+      "interrupt": "i_joybooth"
+    },
+    {
+      "index": 32,
+      "points": 2,
+      "desc": "Tubes shut down",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "TUBE-STATION-F",
+      "rooms": [
+        "TUBE-STATION"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 33,
+      "points": 1,
+      "desc": "BSF officers after apartment raid",
+      "trigger": "event",
+      "years": [
+        2051
+      ],
+      "source_routine": "I-APARTMENT",
+      "interrupt": "i_apartment"
+    },
+    {
+      "index": 34,
+      "points": 1,
+      "desc": "New Indoor City is cheaply built",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "NEW-INDOOR-CITY-F",
+      "rooms": [
+        "NEW-INDOOR-CITY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 35,
+      "points": 6,
+      "desc": "Police club screaming women senseless",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-POLICE",
+      "interrupt": "i_police"
+    },
+    {
+      "index": 36,
+      "points": 8,
+      "desc": "Ruins of Main and Wicker",
+      "trigger": "room_enter",
+      "years": [
+        2081
+      ],
+      "source_routine": "MAIN-AND-WICKER-F",
+      "rooms": [
+        "MAIN-AND-WICKER"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 37,
+      "points": 1,
+      "desc": "Reading the bordello flyer",
+      "trigger": "object_read",
+      "years": [
+        2051
+      ],
+      "source_routine": "BORDELLO-AD-F",
+      "object": "BORDELLO-AD"
+    },
+    {
+      "index": 38,
+      "points": 6,
+      "desc": "Jumped by a gang",
+      "trigger": "death",
+      "years": [
+        2081
+      ],
+      "source_routine": "I-GANG",
+      "interrupt": "i_gang"
+    },
+    {
+      "index": 39,
+      "points": 3,
+      "desc": "Foodville looted",
+      "trigger": "room_enter",
+      "years": [
+        2081
+      ],
+      "source_routine": "FOODVILLE-F",
+      "rooms": [
+        "FOODVILLE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 40,
+      "points": 3,
+      "desc": "So hungry you consider eating mold",
+      "trigger": "event",
+      "years": [
+        2081
+      ],
+      "source_routine": "I-HUNGER",
+      "interrupt": "i_hunger"
+    },
+    {
+      "index": 41,
+      "points": 3,
+      "desc": "The Coachman lies in ruins",
+      "trigger": "room_enter",
+      "years": [
+        2081
+      ],
+      "source_routine": "COACHMAN-F",
+      "rooms": [
+        "COACHMAN"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 42,
+      "points": 3,
+      "desc": "The Coachman off limits to non-churchgoers",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "COACHMAN-F",
+      "rooms": [
+        "COACHMAN"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 43,
+      "points": 1,
+      "desc": "The Coachman frequented by wealthy Churchmen",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "COACHMAN-F",
+      "rooms": [
+        "COACHMAN"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 44,
+      "points": 2,
+      "desc": "Main Street Bridge is in ruins",
+      "trigger": "room_enter",
+      "years": [
+        2081
+      ],
+      "source_routine": "MAIN-STREET-BRIDGE-F",
+      "rooms": [
+        "MAIN-STREET-BRIDGE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 45,
+      "points": 3,
+      "desc": "Devoured by wild dogs",
+      "trigger": "death",
+      "years": [
+        2081
+      ],
+      "source_routine": "I-WILD-DOGS",
+      "interrupt": "i_wild_dogs"
+    },
+    {
+      "index": 46,
+      "points": 2,
+      "desc": "Examining the bloody sack",
+      "trigger": "object_examine",
+      "years": [
+        2081
+      ],
+      "source_routine": "SACK-F",
+      "object": "SACK"
+    },
+    {
+      "index": 47,
+      "points": 4,
+      "desc": "Cemetery abandoned and hiding place for thieves",
+      "trigger": "room_enter",
+      "years": [
+        2081
+      ],
+      "source_routine": "CEMETERY-F",
+      "rooms": [
+        "CEMETERY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 48,
+      "points": 4,
+      "desc": "Cemetery defaced and partially bulldozed",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "CEMETERY-F",
+      "rooms": [
+        "CEMETERY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 49,
+      "points": 2,
+      "desc": "Catholic church closed and defaced",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "CHURCH-ENTRANCE-F",
+      "rooms": [
+        "CHURCH-ENTRANCE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 50,
+      "points": 1,
+      "desc": "Health Center bucks trend to care for poor",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "HEALTH-CENTER-F",
+      "rooms": [
+        "HEALTH-CENTER"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 51,
+      "points": 2,
+      "desc": "Health Center fallen on hard times",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "HEALTH-CENTER-F",
+      "rooms": [
+        "HEALTH-CENTER"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 52,
+      "points": 4,
+      "desc": "Health Center has become substandard serf housing",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "HEALTH-CENTER-F",
+      "rooms": [
+        "HEALTH-CENTER"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 53,
+      "points": 2,
+      "desc": "Landmark train station demolished for Church",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "TRAIN-STATION-F",
+      "rooms": [
+        "TRAIN-STATION"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 54,
+      "points": 1,
+      "desc": "Church of God's Word pamphlet",
+      "trigger": "object_read",
+      "years": [
+        2051
+      ],
+      "source_routine": "PAMPHLET-F",
+      "object": "PAMPHLET"
+    },
+    {
+      "index": 55,
+      "points": 2,
+      "desc": "Church of God's Word pamphlet",
+      "trigger": "object_read",
+      "years": [
+        2061
+      ],
+      "source_routine": "PAMPHLET-F",
+      "object": "PAMPHLET"
+    },
+    {
+      "index": 56,
+      "points": 5,
+      "desc": "Church of God's Word pamphlet",
+      "trigger": "object_read",
+      "years": [
+        2071
+      ],
+      "source_routine": "PAMPHLET-F",
+      "object": "PAMPHLET"
+    },
+    {
+      "index": 57,
+      "points": 4,
+      "desc": "Wealthy couple's bodyguards beat beggar senseless",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-BEGGAR",
+      "interrupt": "i_beggar"
+    },
+    {
+      "index": 58,
+      "points": 1,
+      "desc": "Fur and jewelry show at Huang's",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "HUANG-ENTER-F",
+      "rooms": [
+        "HUANG"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 59,
+      "points": 2,
+      "desc": "BSF Graduation festivities at Huang's",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "HUANG-ENTER-F",
+      "rooms": [
+        "HUANG"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 60,
+      "points": 7,
+      "desc": "Televised executioner awards ceremony",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "HUANG-ENTER-F",
+      "rooms": [
+        "HUANG"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 61,
+      "points": 2,
+      "desc": "Halley Park converted to estates for wealthy",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "HALLEY-PARK-F",
+      "rooms": [
+        "HALLEY-PARK"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 62,
+      "points": 2,
+      "desc": "Halley Museum closed",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "HALLEY-MUSEUM-F",
+      "rooms": [
+        "HALLEY-MUSEUM"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 63,
+      "points": 2,
+      "desc": "Rockvil University closed",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "UNIVERSITY-F",
+      "rooms": [
+        "UNIVERSITY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 64,
+      "points": 1,
+      "desc": "Skycopter announcing prayer meeting",
+      "trigger": "event",
+      "years": [
+        2051
+      ],
+      "source_routine": "I-SKYCOPTER",
+      "interrupt": "i_skycopter"
+    },
+    {
+      "index": 65,
+      "points": 3,
+      "desc": "You would be shot on sight entering the estates",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "ESTATES-F",
+      "rooms": [
+        "ESTATES"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 66,
+      "points": 1,
+      "desc": "Duck pond is dried-up",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "DUCK-POND-F",
+      "rooms": [
+        "DUCK-POND"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 67,
+      "points": 1,
+      "desc": "Statue of Halley missing and pedestal defaced",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "HALLEY-STATUE-F",
+      "rooms": [
+        "HALLEY-STATUE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 68,
+      "points": 5,
+      "desc": "Many species of animals are extinct",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "ZOO-F",
+      "rooms": [
+        "ZOO"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 69,
+      "points": 4,
+      "desc": "Organized torturing of monkeys at zoo",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-ZOO",
+      "interrupt": "i_zoo"
+    },
+    {
+      "index": 70,
+      "points": 2,
+      "desc": "Children torturing animals at zoo",
+      "trigger": "event",
+      "years": [
+        2061
+      ],
+      "source_routine": "I-ZOO",
+      "interrupt": "i_zoo"
+    },
+    {
+      "index": 71,
+      "points": 1,
+      "desc": "Aquarium murky and needs cleaning",
+      "trigger": "room_enter",
+      "years": [
+        2051,
+        2061,
+        2071
+      ],
+      "source_routine": "AQUARIUM-F",
+      "rooms": [
+        "AQUARIUM"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 72,
+      "points": 1,
+      "desc": "Fast food place converted to seedy bar",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "FAST-FOOD-F",
+      "rooms": [
+        "FAST-FOOD"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 73,
+      "points": 2,
+      "desc": "Fast food place no longer serves beef",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "FAST-FOOD-F",
+      "rooms": [
+        "FAST-FOOD"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 74,
+      "points": 2,
+      "desc": "Church youths harassing old Jewish man",
+      "trigger": "event",
+      "years": [
+        2061
+      ],
+      "source_routine": "I-CHURCH-YOUTHS",
+      "interrupt": "i_church_youths"
+    },
+    {
+      "index": 75,
+      "points": 1,
+      "desc": "Jail is very overcrowded and unsanitary",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "JAIL-F",
+      "rooms": [
+        "JAIL"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 76,
+      "points": 3,
+      "desc": "Capital punishment for most crimes",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "COURTHOUSE-F",
+      "rooms": [
+        "COURTHOUSE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 77,
+      "points": 4,
+      "desc": "Capital punishment for all crimes",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "COURTHOUSE-F",
+      "rooms": [
+        "COURTHOUSE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 78,
+      "points": 4,
+      "desc": "Public execution of criminals begins",
+      "trigger": "event",
+      "years": [
+        2061
+      ],
+      "source_routine": "I-EXECUTION",
+      "interrupt": "i_execution"
+    },
+    {
+      "index": 79,
+      "points": 8,
+      "desc": "Enthusiastic crowds at Execution Matches",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-EXECUTION",
+      "interrupt": "i_execution"
+    },
+    {
+      "index": 80,
+      "points": 2,
+      "desc": "Schoolchildren make fun of you",
+      "trigger": "event",
+      "years": [
+        2061
+      ],
+      "source_routine": "I-SCHOOLCHILDREN",
+      "interrupt": "i_schoolchildren",
+      "alt_routines": [
+        "I-SCHOOLCHILDREN-ATHLETIC"
+      ]
+    },
+    {
+      "index": 81,
+      "points": 7,
+      "desc": "Stoned by schoolchildren",
+      "trigger": "death",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-SCHOOLCHILDREN",
+      "interrupt": "i_schoolchildren"
+    },
+    {
+      "index": 82,
+      "points": 5,
+      "desc": "Public school system shut down",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "SCHOOL-F",
+      "rooms": [
+        "SCHOOL"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 83,
+      "points": 3,
+      "desc": "Church owns only bank in Rockvil",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "BANK-F",
+      "rooms": [
+        "BANK"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 84,
+      "points": 2,
+      "desc": "Only two banks in Rockvil forced to merge",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "BANK-F",
+      "rooms": [
+        "BANK"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 85,
+      "points": 3,
+      "desc": "Protestant church was torched by mob",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "PROTESTANT-CHURCH-F",
+      "rooms": [
+        "PROTESTANT-CHURCH"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 86,
+      "points": 2,
+      "desc": "Very few newspapers in existence",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "NEWSPAPER-STAND-F",
+      "rooms": [
+        "NEWSPAPER-STAND"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 87,
+      "points": 3,
+      "desc": "Newspaper contains ominous news",
+      "trigger": "object_read",
+      "years": [
+        2051
+      ],
+      "source_routine": "NEWSPAPER-F",
+      "object": "NEWSPAPER"
+    },
+    {
+      "index": 88,
+      "points": 3,
+      "desc": "Wealthy person's skycar almost crushes old lady",
+      "trigger": "event",
+      "years": [
+        2061
+      ],
+      "source_routine": "I-SKYCAR",
+      "interrupt": "i_skycar"
+    },
+    {
+      "index": 89,
+      "points": 2,
+      "desc": "Wells Theatre has only ecumenical plays",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "WELLS-THEATRE-F",
+      "rooms": [
+        "WELLS-THEATRE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 90,
+      "points": 1,
+      "desc": "Railroad Museum closed",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "RAILROAD-MUSEUM-F",
+      "rooms": [
+        "RAILROAD-MUSEUM"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 91,
+      "points": 5,
+      "desc": "Policemen casually beating up Black youth",
+      "trigger": "event",
+      "years": [
+        2061
+      ],
+      "source_routine": "I-POLICE",
+      "interrupt": "i_police"
+    },
+    {
+      "index": 92,
+      "points": 2,
+      "desc": "Riverside Park is restricted to residents",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "RIVERSIDE-PARK-F",
+      "rooms": [
+        "RIVERSIDE-PARK"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 93,
+      "points": 1,
+      "desc": "Film titles sound insipid",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "CINEMA-F",
+      "rooms": [
+        "CINEMA"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 94,
+      "points": 2,
+      "desc": "Films feature sex and violence and hate",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "CINEMA-F",
+      "rooms": [
+        "CINEMA"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 95,
+      "points": 3,
+      "desc": "Films feature Church propaganda",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "CINEMA-F",
+      "rooms": [
+        "CINEMA"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 96,
+      "points": 2,
+      "desc": "Symphony Hall is closed",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "SYMPHONY-HALL-F",
+      "rooms": [
+        "SYMPHONY-HALL"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 97,
+      "points": 1,
+      "desc": "Guards are rude and rough",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "CITY-HALL-F",
+      "rooms": [
+        "CITY-HALL"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 98,
+      "points": 3,
+      "desc": "Guards are abusive",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "CITY-HALL-F",
+      "rooms": [
+        "CITY-HALL"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 99,
+      "points": 3,
+      "desc": "Spaceport is closed",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "SPACEPORT-F",
+      "rooms": [
+        "SPACEPORT"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 100,
+      "points": 5,
+      "desc": "Shoot-out at airport",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-AIRPORT",
+      "interrupt": "i_airport"
+    },
+    {
+      "index": 101,
+      "points": 2,
+      "desc": "International travellers strip searched",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "AIRPORT-F",
+      "rooms": [
+        "AIRPORT"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 102,
+      "points": 1,
+      "desc": "Long lines at soup kitchen",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "SOUP-KITCHEN-F",
+      "rooms": [
+        "SOUP-KITCHEN"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 103,
+      "points": 3,
+      "desc": "Skycopter announcing Execution Matches",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-SKYCOPTER",
+      "interrupt": "i_skycopter"
+    },
+    {
+      "index": 104,
+      "points": 3,
+      "desc": "Wastes dumped into river without processing",
+      "trigger": "room_enter",
+      "years": [
+        2051,
+        2061,
+        2071
+      ],
+      "source_routine": "RIVER-BANK-F",
+      "rooms": [
+        "RIVER-BANK"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 105,
+      "points": 1,
+      "desc": "Coal-burners supplement fusion reactors",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "POWER-PLANT-F",
+      "rooms": [
+        "POWER-PLANT"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 106,
+      "points": 2,
+      "desc": "Coal-burners provide half the power",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "POWER-PLANT-F",
+      "rooms": [
+        "POWER-PLANT"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 107,
+      "points": 3,
+      "desc": "Coal-burners belching black ash",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "POWER-PLANT-F",
+      "rooms": [
+        "POWER-PLANT"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 108,
+      "points": 3,
+      "desc": "River is on fire as usual",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "RIVER-ON-FIRE-F",
+      "rooms": [
+        "RIVER-ON-FIRE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 109,
+      "points": 1,
+      "desc": "Skycar factory operating at just over half capacity",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "SKYCAR-FACTORY-F",
+      "rooms": [
+        "SKYCAR-FACTORY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 110,
+      "points": 2,
+      "desc": "Skycar factory operating at less than half capacity",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "SKYCAR-FACTORY-F",
+      "rooms": [
+        "SKYCAR-FACTORY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 111,
+      "points": 3,
+      "desc": "Skycar factory operating at a fraction of capacity",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "SKYCAR-FACTORY-F",
+      "rooms": [
+        "SKYCAR-FACTORY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 112,
+      "points": 15,
+      "desc": "Cannibalism",
+      "trigger": "event",
+      "years": [
+        2081
+      ],
+      "source_routine": "I-CANNIBALISM",
+      "interrupt": "i_cannibalism"
+    },
+    {
+      "index": 113,
+      "points": 1,
+      "desc": "Bookstore closed",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "BOOKSTORE-F",
+      "rooms": [
+        "BOOKSTORE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 114,
+      "points": 1,
+      "desc": "Graffiti in tubecar",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "TUBE-CAR-F",
+      "rooms": [
+        "TUBE-CAR"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 115,
+      "points": 2,
+      "desc": "Tubecar filthy and covered with graffiti",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "TUBE-CAR-F",
+      "rooms": [
+        "TUBE-CAR"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 116,
+      "points": 2,
+      "desc": "Curfew in effect",
+      "trigger": "event",
+      "years": [
+        2051,
+        2061,
+        2071
+      ],
+      "source_routine": "I-CURFEW",
+      "interrupt": "i_curfew"
+    },
+    {
+      "index": 117,
+      "points": 8,
+      "desc": "Shot by drunken cops for curfew violation",
+      "trigger": "death",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-CURFEW",
+      "interrupt": "i_curfew"
+    },
+    {
+      "index": 118,
+      "points": 2,
+      "desc": "Smoggy skies",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "OUTDOOR-F",
+      "rooms": [
+        "OUTDOOR"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 119,
+      "points": 4,
+      "desc": "Jill tells you Mitchell has joined the Church",
+      "trigger": "event",
+      "years": [
+        2061
+      ],
+      "source_routine": "I-JILL",
+      "interrupt": "i_jill"
+    },
+    {
+      "index": 120,
+      "points": 9,
+      "desc": "Mitchell drags Jill away as a heretic",
+      "trigger": "event",
+      "years": [
+        2071
+      ],
+      "source_routine": "I-JILL",
+      "interrupt": "i_jill"
+    },
+    {
+      "index": 121,
+      "points": 6,
+      "desc": "List of banned titles in library",
+      "trigger": "object_examine",
+      "years": [
+        2071
+      ],
+      "source_routine": "BANNED-TITLES-LIST-F",
+      "object": "BANNED-TITLES-LIST"
+    },
+    {
+      "index": 122,
+      "points": 1,
+      "desc": "Need appointment to get into Dunbar's",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "DUNBARS-ENTER-F",
+      "rooms": [
+        "DUNBARS"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 123,
+      "points": 1,
+      "desc": "Skybus terminal is run-down and needs repairs",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "SKYBUS-TERMINAL-F",
+      "rooms": [
+        "SKYBUS-TERMINAL"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 124,
+      "points": 1,
+      "desc": "Long line at Post Office window",
+      "trigger": "room_enter",
+      "years": [
+        2061,
+        2071
+      ],
+      "source_routine": "POST-OFFICE-F",
+      "rooms": [
+        "POST-OFFICE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 125,
+      "points": 2,
+      "desc": "Mugging",
+      "trigger": "event",
+      "years": [
+        2041,
+        2051,
+        2061,
+        2071
+      ],
+      "source_routine": "I-MUG",
+      "interrupt": "i_mug"
+    },
+    {
+      "index": 126,
+      "points": 2,
+      "desc": "Description of the soy patty",
+      "trigger": "object_examine",
+      "years": [
+        2071
+      ],
+      "source_routine": "SOY-PATTY-F",
+      "object": "SOY-PATTY"
+    },
+    {
+      "index": 127,
+      "points": 2,
+      "desc": "Firestation has only one dilapidated firecopter",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "FIREHOUSE-F",
+      "rooms": [
+        "FIREHOUSE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 128,
+      "points": 1,
+      "desc": "Cinema lobby is dirty and smelly",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "CINEMA-LOBBY-F",
+      "rooms": [
+        "CINEMA-LOBBY"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 129,
+      "points": 1,
+      "desc": "Halley Museum is not very crowded",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "HALLEY-MUSEUM-F",
+      "rooms": [
+        "HALLEY-MUSEUM"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 130,
+      "points": 1,
+      "desc": "Water tower is corroding",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "WATER-TOWER-F",
+      "rooms": [
+        "WATER-TOWER"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 131,
+      "points": 2,
+      "desc": "Water tower is decrepit",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "WATER-TOWER-F",
+      "rooms": [
+        "WATER-TOWER"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 132,
+      "points": 1,
+      "desc": "River is polluted",
+      "trigger": "room_enter",
+      "years": [
+        2051
+      ],
+      "source_routine": "RIVER-BANK-F",
+      "rooms": [
+        "RIVER-BANK"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 133,
+      "points": 2,
+      "desc": "River is very polluted",
+      "trigger": "room_enter",
+      "years": [
+        2061
+      ],
+      "source_routine": "RIVER-BANK-F",
+      "rooms": [
+        "RIVER-BANK"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 134,
+      "points": 3,
+      "desc": "River is incredibly polluted",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "RIVER-BANK-F",
+      "rooms": [
+        "RIVER-BANK"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 135,
+      "points": 2,
+      "desc": "Clerk is rude and guard is rough in Foodville",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "FOODVILLE-F",
+      "rooms": [
+        "FOODVILLE"
+      ],
+      "rooms_unverified": true
+    },
+    {
+      "index": 136,
+      "points": 2,
+      "desc": "Government official says most of his department fired",
+      "trigger": "event",
+      "years": [
+        2051
+      ],
+      "source_routine": "I-GOVT-OFFICIAL",
+      "interrupt": "i_govt_official"
+    },
+    {
+      "index": 137,
+      "points": 2,
+      "desc": "Aquarium smells of dead fish",
+      "trigger": "room_enter",
+      "years": [
+        2071
+      ],
+      "source_routine": "AQUARIUM-F",
+      "rooms": [
+        "AQUARIUM"
+      ],
+      "rooms_unverified": true
+    }
+  ],
+  "descriptions": {
+    "rooms": {
+      "_note": "Populated in Sessions 14-16. See simulation_tree_schema.md Section 5 for schema."
+    },
+    "objects": {
+      "_note": "Populated in Sessions 15-17. See simulation_tree_schema.md Section 5 for schema."
+    }
+  },
+  "facility": {
+    "chapters": {
+      "1": {
+        "title": "Part One: The Awakening of PRISM",
+        "trigger": "game_start"
+      },
+      "2": {
+        "title": "Part Two: Simulations",
+        "trigger": {
+          "flag": {
+            "name": "completed_tasks",
+            "eq": true
+          }
+        }
+      },
+      "3": {
+        "title": "Part Three: The Plan Goes Into Effect",
+        "trigger": "handler:check_plan_adoption"
+      },
+      "4": {
+        "title": "Epilogue",
+        "trigger": "handler:check_epilogue"
+      }
+    },
+    "recording_tasks": [
+      {
+        "index": 0,
+        "desc": "Eating a meal in a restaurant"
+      },
+      {
+        "index": 1,
+        "desc": "Talking to a government official"
+      },
+      {
+        "index": 2,
+        "desc": "Visiting a power-generating facility"
+      },
+      {
+        "index": 3,
+        "desc": "Reading a newspaper"
+      },
+      {
+        "index": 4,
+        "desc": "Riding some form of public transportation"
+      },
+      {
+        "index": 5,
+        "desc": "Attending a court in session"
+      },
+      {
+        "index": 6,
+        "desc": "Talking to a church official"
+      },
+      {
+        "index": 7,
+        "desc": "Going to a movie"
+      },
+      {
+        "index": 8,
+        "desc": "Visiting your own home or living quarters"
+      }
+    ],
+    "sim_unlock_thresholds": {
+      "2051": {
+        "requires": "completed_tasks"
+      },
+      "2061": {
+        "requires": {
+          "sim_level_table_1": {
+            "gt": 300
+          }
+        }
+      },
+      "2071": {
+        "requires": {
+          "sim_level_table_2": {
+            "gt": 400
+          }
+        }
+      },
+      "2081": {
+        "requires": {
+          "sim_level_table_3": {
+            "gt": 600
+          }
+        }
+      },
+      "2091": {
+        "requires": {
+          "part_flag": {
+            "eq": 4
+          }
+        }
+      }
+    },
+    "security_code": {
+      "colors_table": [
+        "WHITE",
+        "DARK GREEN",
+        "DARK BLUE",
+        "PINK",
+        "ORANGE",
+        "PURPLE",
+        "TAN",
+        "AQUA",
+        "LIGHT BLUE",
+        "LIGHT GREEN",
+        "LIGHT GRAY",
+        "YELLOW",
+        "BLACK",
+        "DARK GRAY",
+        "BROWN",
+        "RED"
+      ],
+      "inner_numbers": [
+        89,
+        61,
+        50,
+        18,
+        29,
+        82,
+        46,
+        77,
+        27,
+        68,
+        22,
+        95,
+        40,
+        58,
+        15,
+        86,
+        28,
+        33,
+        94,
+        11,
+        64,
+        98,
+        34,
+        49,
+        60,
+        16,
+        85,
+        52,
+        37,
+        53,
+        93,
+        91
+      ],
+      "outer_numbers": [
+        12,
+        66,
+        73,
+        36,
+        90,
+        41,
+        19,
+        48,
+        62,
+        92,
+        55,
+        23,
+        84,
+        99,
+        57,
+        20,
+        78,
+        67,
+        51,
+        88,
+        17,
+        31,
+        70,
+        39,
+        96,
+        25,
+        81,
+        83,
+        47,
+        54,
+        13,
+        43
+      ],
+      "note": "Color index * 2 + inner_index = outer_table_index (mod 32). Player enters outer_numbers[offset] given color and inner number."
+    },
+    "messages": {
+      "_note": "Message schedule extracted in Session 14."
+    },
+    "endgame": {
+      "_note": "Endgame sequence details extracted in Session 14."
+    }
+  }
+}
