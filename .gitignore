@@ -1,0 +1,4 @@
+build/
+__pycache__/
+*.pyc
+verify_objects_results.json
